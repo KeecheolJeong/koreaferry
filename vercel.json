@@ -1,8 +1,7 @@
 {
   "installCommand": "echo skip install",
   "buildCommand": "echo skip build",
-  "outputDirectory": ".",
-  "rewrites": [
-    { "source": "/", "destination": "/api/ask" }
-  ]
+  "rewrites": [ { "source": "/", "destination": "/api/ask" } ],
+  "functions": { "api/ask.js": { "includeFiles": "data/faqs.json" } }
 }
+
