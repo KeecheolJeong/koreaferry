@@ -1,5 +1,8 @@
 {
   "installCommand": "echo skip install",
   "buildCommand": "echo skip build",
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "rewrites": [
+    { "source": "/", "destination": "/api/ask" }
+  ]
 }
