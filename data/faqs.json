@@ -1,0 +1,10 @@
+[
+  { "id":"faq_baggage_001","question":"수하물","aliases":["짐","캐리어","baggage","luggage","荷物"],
+    "answers":{"KO":"수하물 안내: 선내 반입 기준과 추가요금은 노선/선사별 규정에 따릅니다.","JA":"手荷物のご案内：規定は航路・船会社により異なります。","ZH":"行李说明：标准随航线/船公司而异。","EN":"Baggage info: rules vary by route/operator."} },
+  { "id":"faq_checkin_001","question":"수속","aliases":["체크인","checkin","check-in","搭乗手続き"],
+    "answers":{"KO":"수속은 16:30~19:00에 가능합니다. 이후 출국장 마감으로 수속 불가.","JA":"搭乗手続きは16:30〜19:00。","ZH":"办理手续时间为16:30~19:00。","EN":"Check-in: 16:30–19:00."} },
+  { "id":"faq_wheelchair_001","question":"휠체어","aliases":["wheelchair","車椅子","轮椅"],
+    "answers":{"KO":"사전 요청 시 항만/선내 이동 보조를 도와드립니다.","JA":"事前連絡で乗務員がサポートします。","ZH":"需提前告知，工作人员协助。","EN":"Wheelchair assistance available on request."} },
+  { "id":"faq_pregnancy_001","question":"임산부","aliases":["pregnant","妊婦","孕妇"],
+    "answers":{"KO":"임산부 승선은 의사 소견서가 필요할 수 있습니다(노선별 상이).","JA":"妊婦のご乗船は医師の診断書が必要な場合があります。","ZH":"孕妇登船可能需要医生证明。","EN":"Pregnant passengers may require a doctor’s note."} }
+]
