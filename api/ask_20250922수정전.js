@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 /* -------------------------------------------------------------
- * Load FAQs once (robust path for Vercel)
+ * Load FAQs (robust path for Vercel; read once into memory)
  * ----------------------------------------------------------- */
 const FAQS = (() => {
   try {
@@ -17,17 +17,15 @@ const FAQS = (() => {
 
 /* -------------------------------------------------------------
  * CORS (for browser fetch from WordPress, etc.)
- *  - env ALLOW_ORIGINS: comma separated origins
- *  - default: "*" (모두 허용)
  * ----------------------------------------------------------- */
-const ALLOW_ORIGINS = (process.env.ALLOW_ORIGINS || '*')
-  .split(',')
-  .map(s => s.trim());
+const ALLOW_ORIGINS = (process.env.ALLOW_ORIGINS ||
+  'https://www.koreaferry.com,https://koreaferry.com,https://koreaferry.vercel.app,*'
+).split(',').map(s => s.trim());
 
 function setCors(res, origin) {
   const allow =
     ALLOW_ORIGINS.includes('*') ? '*' :
-    (ALLOW_ORIGINS.includes(origin) ? origin : (ALLOW_ORIGINS[0] || '*'));
+    (ALLOW_ORIGINS.includes(origin) ? origin : ALLOW_ORIGINS[0]);
   res.setHeader('Access-Control-Allow-Origin', allow);
   res.setHeader('Vary', 'Origin');
   res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
@@ -41,7 +39,8 @@ function setCors(res, origin) {
 const stripInvis = (s) => String(s ?? '').replace(/[\u200B-\u200D\uFEFF]/g, ''); // ZWSP/ZWNJ/ZWJ/BOM
 const clean      = (s) => stripInvis(String(s ?? '')).normalize('NFKC').toLowerCase();
 const normSpace  = (s) => clean(s).replace(/\s+/g, ' ').trim();
-const charSet    = (s) => new Set(Array.from(clean(s).replace(/\s+/g, '')));
+
+const charSet = (s) => new Set(Array.from(clean(s).replace(/\s+/g, '')));
 
 const jaccard = (A, B) => {
   if (!A.size || !B.size) return 0;
@@ -72,32 +71,13 @@ function pickAnswer(entry, lang) {
   return ans[lang] || ans.KO || ans.EN || Object.values(ans)[0] || '';
 }
 
-/* -------------------------------------------------------------
- * Candidate builder (question + aliases + keywords_core + keywords_related)
- *  - 각 후보가 어디서 왔는지(from)도 같이 반환(디버그 도움)
- * ----------------------------------------------------------- */
-function buildCandidates(faq) {
-  const out = [];
-  const pushAll = (arr, from) => {
-    for (const v of (arr || [])) {
-      if (!v) continue;
-      out.push({ text: String(v), from });
-    }
-  };
-  if (faq.question) out.push({ text: String(faq.question), from: 'question' });
-  pushAll(faq.aliases,          'alias');
-  pushAll(faq.keywords_core,    'core');
-  pushAll(faq.keywords_related, 'related');
-  return out;
-}
-
 function bestMatch(question, lang, threshold) {
-  let best = { score: -1, entry: null, matched: '', matched_from: '' };
+  let best = { score: -1, entry: null, matched: '' };
   for (const f of FAQS) {
-    const cands = buildCandidates(f);
-    for (const c of cands) {
-      const sc = score(question, c.text);
-      if (sc > best.score) best = { score: sc, entry: f, matched: c.text, matched_from: c.from };
+    const candidates = [f.question, ...(f.aliases || [])];
+    for (const cand of candidates) {
+      const sc = score(question, cand);
+      if (sc > best.score) best = { score: sc, entry: f, matched: cand };
     }
   }
   return best.score >= threshold ? best : null;
@@ -108,12 +88,13 @@ function bestMatch(question, lang, threshold) {
  * ----------------------------------------------------------- */
 module.exports = async (req, res) => {
   try {
-    // CORS
+    // CORS: preflight & headers
     setCors(res, req.headers.origin);
     if (req.method === 'OPTIONS') return res.status(204).end();
 
     // GET: status & quick test via query (?q=...&diag=1)
     if (req.method === 'GET') {
+      // req.query 유무와 상관없이 안전하게 파싱
       let qRaw = '';
       let diag = '';
       try {
@@ -127,7 +108,7 @@ module.exports = async (req, res) => {
         }
       } catch {}
 
-      // 한글/멀티바이트 안전 디코드 (이미 디코딩된 문자열이어도 try/catch로 안전)
+      // 한글이 깨지지 않도록, 이미 디코딩된 경우도 안전하게 처리
       let question = qRaw;
       try { question = decodeURIComponent(qRaw); } catch {}
 
@@ -138,17 +119,10 @@ module.exports = async (req, res) => {
           debug = {
             score: +bm.score.toFixed(3),
             matched: bm.matched,
-            matched_from: bm.matched_from,
             id: bm.entry.id,
-            url: bm.entry.url || null,
-            url_title: bm.entry.url_title || null,
           };
           if (diag === '1') {
-            debug.details = {
-              Q_raw: question,
-              C_raw: String(bm.matched || ''),
-              candidates_preview: buildCandidates(bm.entry).slice(0, 8)
-            };
+            debug.details = { Q_raw: question, C_raw: String(bm.matched || '') };
           }
         }
       }
@@ -185,11 +159,6 @@ module.exports = async (req, res) => {
         });
       }
 
-      // URL / Title (양쪽 키로 모두 제공: url/url_title + answer_url/answer_title)
-      const url = match.entry.url || null;
-      const url_title = match.entry.url_title || null;
-      const sources = url ? [{ id: match.entry.id, url, title: url_title || url }] : undefined;
-
       return res.status(200).json({
         ok: true,
         lang,
@@ -197,16 +166,9 @@ module.exports = async (req, res) => {
           id: match.entry.id,
           question: match.entry.question,
           matched: match.matched,
-          matched_from: match.matched_from,
           score: +match.score.toFixed(3),
         },
         answer: pickAnswer(match.entry, lang),
-        url,
-        url_title,
-        // 호환용(프론트가 answer_url/answer_title을 기대하는 경우도 지원)
-        answer_url: url,
-        answer_title: url_title,
-        sources, // SHOW_SOURCE_CHIPS=true 시 칩으로 노출 가능
       });
     }
 

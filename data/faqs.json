@@ -2,45 +2,201 @@
   {
     "id": "faq_baggage_001",
     "question": "수하물",
-    "aliases": ["짐", "캐리어", "baggage", "luggage", "荷物"],
+    "aliases": [
+      "짐",
+      "캐리어",
+      "baggage",
+      "luggage",
+      "荷物"
+    ],
     "answers": {
-      "KO": "수하물 안내: 선내 반입 기준과 추가요금은 노선/선사별 규정에 따릅니다.",
-      "JA": "手荷物のご案内：規定は航路・船会社により異なります。",
-      "ZH": "行李说明：标准随航线/船公司而异。",
-      "EN": "Baggage info: rules vary by route/operator."
-    }
+      "KO": "[핵심] 선내 반입은 30kg까지 무료이며 위탁수하물은 유료입니다. 기준과 추가요금은 아래 링크를 참고하세요.\n[보충] 자전거·서핑보드 등 특수수하물은 사전 문의를 권장합니다.",
+      "JA": "[要点] 船内持込は30kgまで無料、受託手荷物は有料です。基準および追加料金は下記リンクをご確認ください。\n[補足] 自転車・サーフボード等の特殊手荷物は事前にお問い合わせください。",
+      "ZH": "[核心] 船内随身携带行李30kg以内免费；托运行李需付费。具体标准与额外费用请见下方链接。\n[补充] 自行车、冲浪板等特殊行李建议提前咨询。",
+      "EN": "[Key] Carry-on (brought onboard) is free up to 30 kg; checked baggage is chargeable. See the link below for limits and fees.\n[Note] Special items (e.g., bicycle, surfboard) may require prior inquiry.",
+      "ZH_TW": "[核心] 船內隨身攜帶行李30kg以內免費；託運行李需付費。詳見下方連結之標準與額外費用。\n[補充] 自行車、衝浪板等特殊行李建議事先詢問。"
+    },
+    "keywords_core": [
+      "수하물",
+      "baggage",
+      "luggage"
+    ],
+    "keywords_related": [
+      "반입",
+      "추가요금",
+      "특수수하물",
+      "자전거"
+    ],
+    "notes": {
+      "KO": {
+        "core": "노선/선사별 상이",
+        "extra": "특수수하물 사전 문의",
+        "exceptions": ""
+      }
+    },
+    "url": "https://www.koreaferry.com/user_guide/baggage_fee/",
+    "url_title": "수하물요금 상세보기click",
+    "category": "Baggage",
+    "destination": null,
+    "policy_ref": "POL-BAGGAGE-2025-06",
+    "source": "선사 수하물 규정 2025-06",
+    "version": 1,
+    "updated_at": "2025-09-21",
+    "effective_from": "2025-09-01",
+    "effective_through": null,
+    "audience": "customer",
+    "confidence": "medium"
   },
+
   {
     "id": "faq_checkin_001",
     "question": "수속",
-    "aliases": ["체크인", "checkin", "check-in", "搭乗手続き"],
+    "aliases": [
+      "체크인",
+      "발권",
+      "승선권",
+      "ticket",
+      "boarding pass",
+      "보딩패스",
+      "check-in"
+    ],
     "answers": {
-      "KO": "수속은 16:30~19:00에 가능합니다. 이후 출국장 마감으로 수속 불가.",
-      "JA": "搭乗手続きは16:30〜19:00。",
-      "ZH": "办理手续时间为16:30~19:00。",
-      "EN": "Check-in: 16:30–19:00."
-    }
+      "KO": "[핵심] 수속은 16:30~19:00까지 가능합니다. 이후는 출국장 마감으로 수속 불가합니다.\n[보충] 늦어서 타지 못하는 경우는 노쇼로 처리되니 유의하세요.",
+      "JA": "[要点] 搭乗手続きは16:30〜19:00に承ります。以降は出国エリアの締切により手続きできません。\n[補足] 遅延によりご搭乗いただけない場合はノーショー扱いとなる場合があります。",
+      "ZH": "[核心] 登船办理时间为16:30–19:00；之后因出境区域关闭，无法办理。\n[补充] 因迟到未能登船的情况可能按未到（no-show）处理。",
+      "EN": "[Key] Check-in is available 16:30–19:00. After that, check-in is unavailable due to departure area closure.\n[Note] Late arrival may be treated as a no-show.",
+      "ZH_TW": "[核心] 辦理登船手續時間為16:30–19:00；之後因出境區域關閉，無法辦理。\n[補充] 因遲到未能登船者，可能視為未到（no-show）。"
+    },
+    "keywords_core": [
+      "체크인",
+      "check-in",
+      "boarding pass"
+    ],
+    "keywords_related": [
+      "승선",
+      "노쇼",
+      "지각",
+      "마감"
+    ],
+    "notes": {
+      "KO": {
+        "core": "승선 체크인",
+        "extra": "승선권 발권",
+        "exceptions": ""
+      }
+    },
+    "url": "https://www.koreaferry.com/user_guide/check_in/",
+    "url_title": "수속/승선 상세보기click",
+    "category": "Check-in",
+    "destination": null,
+    "policy_ref": "POL-CHECKIN-2025-09",
+    "source": "승선 수속시간안내 2025-09",
+    "version": 1,
+    "updated_at": "2025-09-21",
+    "effective_from": "2025-09-01",
+    "effective_through": null,
+    "audience": "customer",
+    "confidence": "medium"
   },
+
   {
     "id": "faq_wheelchair_001",
     "question": "휠체어",
-    "aliases": ["wheelchair", "車椅子", "轮椅"],
+    "aliases": [
+      "장애인",
+      "노인",
+      "환자",
+      "wheelchair",
+      "車椅子",
+      "輪椅"
+    ],
     "answers": {
-      "KO": "사전 요청 시 항만/선내 이동 보조를 도와드립니다.",
-      "JA": "事前連絡で乗務員がサポートします。",
-      "ZH": "需提前告知，工作人员协助。",
-      "EN": "Wheelchair assistance available on request."
-    }
+      "KO": "[핵심] 보행이 불편하신 고객을 위하여 출국 수속까지만 사용 가능한 휠체어를 무료로 대여해드리고 있으며, 선내에도 대여용 휠체어가 준비되어 있습니다.\n[보충] 사전 요청 시 항만/선내 이동 보조를 도와드립니다.",
+      "JA": "[要点] 出国手続きまでご利用可能な車椅子を無料で貸出しています。船内にも貸出用車椅子をご用意しています。\n[補足] 事前のご連絡により、港内・船内での移動補助を手配いたします。",
+      "ZH": "[核心] 可免费借用用于至出境手续为止的轮椅，船内亦备有借用轮椅。\n[补充] 需提前告知，可安排港区/船内的行动协助。",
+      "EN": "[Key] Complimentary wheelchairs are available for use up to departure procedures; additional wheelchairs are available onboard.\n[Note] Port/onboard mobility assistance can be arranged on request.",
+      "ZH_TW": "[核心] 可免費借用僅供至出境手續前使用的輪椅，船內亦備有借用輪椅。\n[補充] 事先告知即可協助安排港區/船內之移動服務。"
+    },
+    "keywords_core": [
+      "휠체어",
+      "車椅子",
+      "輪椅"
+    ],
+    "keywords_related": [
+      "대여",
+      "거동불편",
+      "노인",
+      "보조"
+    ],
+    "notes": {
+      "KO": {
+        "core": "휠체어 대여",
+        "extra": "사전 요청 시 보조 가능",
+        "exceptions": ""
+      }
+    },
+    "url": "https://www.koreaferry.com/user_guide/need_help/",
+    "url_title": "휠체어 상세보기click",
+    "category": "Wheelchair",
+    "destination": null,
+    "policy_ref": "POL-WHEELCHAIR-2025-09",
+    "source": "휠체어 2025-09",
+    "version": 1,
+    "updated_at": "2025-09-21",
+    "effective_from": "2025-09-01",
+    "effective_through": null,
+    "audience": "customer",
+    "confidence": "medium"
   },
+
   {
     "id": "faq_pregnancy_001",
     "question": "임산부",
-    "aliases": ["pregnant", "妊婦", "孕妇"],
+    "aliases": [
+      "임신",
+      "임신32주",
+      "pregnant",
+      "妊婦",
+      "孕妇"
+    ],
     "answers": {
-      "KO": "임산부 승선은 의사 소견서가 필요할 수 있습니다(노선별 상이).",
-      "JA": "妊婦のご乗船は医師の診断書が必要な場合があります。",
-      "ZH": "孕妇登船可能需要医生证明。",
-      "EN": "Pregnant passengers may require a doctor’s note."
-    }
+      "KO": "[핵심] 예약 시 반드시 말씀해 주셔야 하며, 임신기간에 관계없이 동의서 작성이 필요합니다.\n[보충] 당사 선박에는 의료진(의사, 간호사)이 승선하지 않으며, 의료설비/의약품이 충분하지 않습니다.",
+      "JA": "[要点] 予約時に必ずお申し出ください。妊娠週数にかかわらず同意書のご提出が必要となる場合があります。\n[補足] 当社船舶には医師・看護師などの医療スタッフは乗船しておらず、十分な医療設備・医薬品も備えておりません。",
+      "ZH": "[核心] 预约时请务必告知；无论妊娠周数，可能需要提交同意书。\n[补充] 船上无专职医护人员，且医疗设备/药品并不充足。",
+      "EN": "[Key] Please inform us at the time of booking; a consent form may be required regardless of gestational age.\n[Note] There are no dedicated medical staff onboard and medical equipment/medicines are limited.",
+      "ZH_TW": "[核心] 預約時務必告知；不論妊娠週數，可能需要填寫同意書。\n[補充] 船上無專職醫護人員，且醫療設備/藥品並不充足。"
+    },
+    "keywords_core": [
+      "임산부",
+      "임신",
+      "pregnant",
+      "妊婦",
+      "孕妇"
+    ],
+    "keywords_related": [
+      "동의서",
+      "의사소견서",
+      "32주",
+      "승선제한"
+    ],
+    "notes": {
+      "KO": {
+        "core": "임산부 안전 고지",
+        "extra": "의료 인프라 제한",
+        "exceptions": "기상/선체 동요 또는 장시간 운항 등으로 안전 확보가 어렵다고 판단될 경우 승선이 제한될 수 있습니다."
+      }
+    },
+    "url": "https://www.koreaferry.com/user_guide/need_help/",
+    "url_title": "임산부 상세보기click",
+    "category": "Pregnancy",
+    "destination": null,
+    "policy_ref": "POL-PREGNANCY-2025-09",
+    "source": "임산부 2025-09",
+    "version": 1,
+    "updated_at": "2025-09-21",
+    "effective_from": "2025-09-01",
+    "effective_through": null,
+    "audience": "customer",
+    "confidence": "medium"
   }
 ]
