@@ -35,7 +35,7 @@
       }
     },
     "url": "https://www.koreaferry.com/user_guide/baggage_fee/",
-    "url_title": "수하물요금 상세보기click",
+    "url_title": "수하물요금 <상세보기>",
     "category": "Baggage",
     "destination": null,
     "policy_ref": "POL-BAGGAGE-2025-06",
@@ -86,7 +86,7 @@
       }
     },
     "url": "https://www.koreaferry.com/user_guide/check_in/",
-    "url_title": "수속/승선 상세보기click",
+    "url_title": "수속/승선 <상세보기>",
     "category": "Check-in",
     "destination": null,
     "policy_ref": "POL-CHECKIN-2025-09",
@@ -136,7 +136,7 @@
       }
     },
     "url": "https://www.koreaferry.com/user_guide/need_help/",
-    "url_title": "휠체어 상세보기click",
+    "url_title": "휠체어 <상세보기>",
     "category": "Wheelchair",
     "destination": null,
     "policy_ref": "POL-WHEELCHAIR-2025-09",
@@ -187,7 +187,7 @@
       }
     },
     "url": "https://www.koreaferry.com/user_guide/need_help/",
-    "url_title": "임산부 상세보기click",
+    "url_title": "임산부 <상세보기>",
     "category": "Pregnancy",
     "destination": null,
     "policy_ref": "POL-PREGNANCY-2025-09",
