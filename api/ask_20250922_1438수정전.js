@@ -17,7 +17,8 @@ const FAQS = (() => {
 
 /* -------------------------------------------------------------
  * CORS (for browser fetch from WordPress, etc.)
- *  - env ALLOW_ORIGINS: comma separated origins, default "*"
+ *  - env ALLOW_ORIGINS: comma separated origins
+ *  - default: "*" (모두 허용)
  * ----------------------------------------------------------- */
 const ALLOW_ORIGINS = (process.env.ALLOW_ORIGINS || '*')
   .split(',')
@@ -35,81 +36,33 @@ function setCors(res, origin) {
 }
 
 /* -------------------------------------------------------------
- * Matching config (stronger)
- * ----------------------------------------------------------- */
-// 하한선(환경변수로 조절): 너무 낮게 두면 오탐↑
-const HARD_MIN = Number(process.env.FAQ_HARD_MIN ?? 0.30);  // 0.30 권장
-// 기본 임계값(긴 질의용 베이스라인)
-const DEFAULT_THRESHOLD = Number(process.env.FAQ_THRESHOLD ?? 0.30);
-// 너무 짧은 질의 차단
-const MIN_QUERY_CHARS = Number(process.env.FAQ_MIN_QUERY_CHARS ?? 2);
-
-/* -------------------------------------------------------------
- * Text utils / scoring
+ * Text utils (normalize / tokenization / scoring)
  * ----------------------------------------------------------- */
 const stripInvis = (s) => String(s ?? '').replace(/[\u200B-\u200D\uFEFF]/g, ''); // ZWSP/ZWNJ/ZWJ/BOM
 const clean      = (s) => stripInvis(String(s ?? '')).normalize('NFKC').toLowerCase();
-const noSpace    = (s) => clean(s).replace(/\s+/g, '');
+const normSpace  = (s) => clean(s).replace(/\s+/g, ' ').trim();
+const charSet    = (s) => new Set(Array.from(clean(s).replace(/\s+/g, '')));
 
-const charSet = (s) => new Set(Array.from(noSpace(s)));
-
-// CJK-safe bigrams (연속 2글자 단위 토큰)
-function bigramSet(s) {
-  const t = noSpace(s);
-  const out = new Set();
-  if (t.length < 2) return out;
-  for (let i = 0; i < t.length - 1; i++) {
-    out.add(t[i] + t[i + 1]);
-  }
-  return out;
-}
-
-function jaccardSets(A, B) {
-  if (!A.size || !B.size) return { score: 0, inter: 0 };
+const jaccard = (A, B) => {
+  if (!A.size || !B.size) return 0;
   let inter = 0;
-  for (const v of A) if (B.has(v)) inter++;
-  const score = inter / (A.size + B.size - inter);
-  return { score, inter };
-}
-
-// 동적 임계값: 짧은 질의일수록 빡세게
-function dynamicThreshold(q) {
-  const n = noSpace(q).length;
-  if (n <= 1) return 1.0;   // 사실상 차단
-  if (n === 2) return 0.98; // 거의 exact/contains만 통과
-  if (n === 3) return 0.60;
-  if (n <= 5) return 0.40;
-  return DEFAULT_THRESHOLD; // 6+ 글자
-}
+  for (const t of A) if (B.has(t)) inter++;
+  return inter / (A.size + B.size - inter);
+};
 
 function score(q, c) {
-  const Q = noSpace(q);
-  const C = noSpace(c);
-  if (!Q || !C) return 0;
-
-  // 1) exact
-  if (Q === C) return 1.0;
-
-  // 2) contains (양방향)
-  if (Q.includes(C) || C.includes(Q)) return 0.98;
-
-  // 3) bigram 우선 (둘 다 bigram 존재할 때)
-  const QB = bigramSet(Q), CB = bigramSet(C);
-  if (QB.size && CB.size) {
-    const { score } = jaccardSets(QB, CB);
-    if (score > 0) return score;
-  }
-
-  // 4) fallback: char-level Jaccard
-  const QC = charSet(Q), CC = charSet(C);
-  const { score } = jaccardSets(QC, CC);
-  return score;
+  const Q = clean(q).trim();
+  const C = clean(c).trim();
+  if (Q && C && Q === C) return 1;                 // exact
+  if (Q && C && (Q.includes(C) || C.includes(Q)))  // contains
+    return 0.95;
+  return jaccard(charSet(Q), charSet(C));          // char-level Jaccard (CJK-safe)
 }
 
 function detectLang(q) {
   const s = String(q || '');
   if (/[ぁ-ゔァ-ヴー]/.test(s)) return 'JA';
-  if (/[\u4e00-\u9fff]/.test(s)) return 'ZH'; // (ZH_TW는 클라이언트에서 강제 지정 가능)
+  if (/[\u4e00-\u9fff]/.test(s)) return 'ZH';
   if (/[a-zA-Z]/.test(s)) return 'EN';
   return 'KO';
 }
@@ -121,48 +74,30 @@ function pickAnswer(entry, lang) {
 
 /* -------------------------------------------------------------
  * Candidate builder (question + aliases + keywords_core + keywords_related)
+ *  - 각 후보가 어디서 왔는지(from)도 같이 반환(디버그 도움)
  * ----------------------------------------------------------- */
 function buildCandidates(faq) {
   const out = [];
-  const seen = new Set();
-  const push = (text, from) => {
-    const t = String(text || '');
-    if (!t) return;
-    const key = `${from}::${t}`;
-    if (seen.has(key)) return;
-    seen.add(key);
-    out.push({ text: t, from });
+  const pushAll = (arr, from) => {
+    for (const v of (arr || [])) {
+      if (!v) continue;
+      out.push({ text: String(v), from });
+    }
   };
-
-  if (faq.question) push(faq.question, 'question');
-  for (const v of (faq.aliases || []))          push(v, 'alias');
-  for (const v of (faq.keywords_core || []))    push(v, 'core');
-  for (const v of (faq.keywords_related || [])) push(v, 'related');
-
+  if (faq.question) out.push({ text: String(faq.question), from: 'question' });
+  pushAll(faq.aliases,          'alias');
+  pushAll(faq.keywords_core,    'core');
+  pushAll(faq.keywords_related, 'related');
   return out;
 }
 
-/* -------------------------------------------------------------
- * Best match with strong guard
- *   - very short queries => high threshold
- *   - floor with HARD_MIN
- * ----------------------------------------------------------- */
-function bestMatch(question, lang, baseThreshold = DEFAULT_THRESHOLD) {
-  const q = String(question || '').trim();
-  const qlen = noSpace(q).length;
-  if (qlen < MIN_QUERY_CHARS) return null;
-
-  const dynT = dynamicThreshold(q);
-  const threshold = Math.max(dynT, HARD_MIN, baseThreshold);
-
+function bestMatch(question, lang, threshold) {
   let best = { score: -1, entry: null, matched: '', matched_from: '' };
   for (const f of FAQS) {
     const cands = buildCandidates(f);
     for (const c of cands) {
-      const sc = score(q, c.text);
-      if (sc > best.score) {
-        best = { score: sc, entry: f, matched: c.text, matched_from: c.from };
-      }
+      const sc = score(question, c.text);
+      if (sc > best.score) best = { score: sc, entry: f, matched: c.text, matched_from: c.from };
     }
   }
   return best.score >= threshold ? best : null;
@@ -192,13 +127,12 @@ module.exports = async (req, res) => {
         }
       } catch {}
 
-      // 안전 디코드
+      // 한글/멀티바이트 안전 디코드 (이미 디코딩된 문자열이어도 try/catch로 안전)
       let question = qRaw;
       try { question = decodeURIComponent(qRaw); } catch {}
 
       let debug = null;
       if (question) {
-        // 디버그에서는 threshold=0으로 원시 스코어 확인
         const bm = bestMatch(question, detectLang(question), 0);
         if (bm) {
           debug = {
@@ -208,11 +142,6 @@ module.exports = async (req, res) => {
             id: bm.entry.id,
             url: bm.entry.url || null,
             url_title: bm.entry.url_title || null,
-            thresholds: {
-              dynamic: dynamicThreshold(question),
-              hard_min: HARD_MIN,
-              default_threshold: DEFAULT_THRESHOLD
-            }
           };
           if (diag === '1') {
             debug.details = {
@@ -226,7 +155,7 @@ module.exports = async (req, res) => {
 
       return res.status(200).json({
         ok: true,
-        version: 'faq-api-only v1-strong',
+        version: 'faq-api-only v1-revised',
         methods: ['GET', 'POST'],
         faqs_count: FAQS.length,
         sample: FAQS[0]?.question || null,
@@ -244,15 +173,15 @@ module.exports = async (req, res) => {
       }
 
       const lang = (body.lang || detectLang(question)).toUpperCase();
-      const baseT = Number(process.env.FAQ_THRESHOLD ?? DEFAULT_THRESHOLD);
-      const match = bestMatch(question, lang, baseT);
+      const threshold = Number(process.env.FAQ_THRESHOLD ?? 0.08);
+      const match = bestMatch(question, lang, threshold);
 
       if (!match) {
         return res.status(200).json({
           ok: true,
           lang,
           match: null,
-          answer: '이 문의는 직접 선사에 문의 부탁드립니다. \n [전화번호] 051-410-7800~7',
+          answer: '등록된 FAQ를 찾지 못했습니다.',
         });
       }
 
@@ -274,9 +203,10 @@ module.exports = async (req, res) => {
         answer: pickAnswer(match.entry, lang),
         url,
         url_title,
+        // 호환용(프론트가 answer_url/answer_title을 기대하는 경우도 지원)
         answer_url: url,
         answer_title: url_title,
-        sources,
+        sources, // SHOW_SOURCE_CHIPS=true 시 칩으로 노출 가능
       });
     }
 
