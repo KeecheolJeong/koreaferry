@@ -10,7 +10,6 @@
       "荷物",
       "手荷物",
       "船内持込",
-      "船內持込",
       "行李"
     ],
     "keywords_core": [
@@ -28,7 +27,6 @@
     "answers": {
       "KO": "[요점] 선내 반입은 30kg까지 무료이며 위탁수하물은 유료입니다. 기준과 추가요금은 아래 링크를 참고하세요.\n[보충설명] 자전거·서핑보드 등 특수수하물은 사전 문의를 권장합니다.",
       "JA": "[要点] 船内持込は30kgまで無料、受託手荷物は有料です。基準および追加料金は下記リンクをご確認ください。\n[補足] 自転車・サーフボード等の特殊手荷物は事前にお問い合わせください。",
-      "ZH": "[核心] 船内随身携带行李30kg以内免费；托运行李需付费。具体标准与额外费用请见下方链接。\n[补充] 自行车、冲浪板等特殊行李建议提前咨询。",
       "ZH_TW": "[核心] 船內隨身攜帶行李30kg以內免費；託運行李需付費。詳見下方連結之標準與額外費用。\n[補充] 自行車、衝浪板等特殊行李建議事先詢問。",
       "EN": "[Key] Carry-on up to 30 kg per passenger is free; checked baggage is chargeable. See the link below for limits and fees.\n[Note] Special items (e.g., bicycle, surfboard) may require prior inquiry."
     },
