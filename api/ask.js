@@ -2,6 +2,7 @@
 // Vercel Serverless (Node) — CORS + 언어감지(ja 오인 방지) + zh 간/번체 정규화 + 혼합 스키마 지원
 const fs = require('fs');
 const path = require('path');
+const FAQS = require('./faqs.json');
 
 /* -------------------------------------------------------------
  * Load FAQs once (Vercel 런타임에서 안전한 경로)
@@ -51,6 +52,26 @@ const MIN_QUERY_CHARS = Number(process.env.FAQ_MIN_QUERY_CHARS ?? 2);
 /* -------------------------------------------------------------
  * Text utils / scoring
  * ----------------------------------------------------------- */
+ 
+ // JSON body 안전 파싱 (문자열/스트림/객체 모두 대응)
+async function readJsonBody(req) {
+  try {
+    if (req.body) {
+      if (typeof req.body === 'string') return JSON.parse(req.body);
+      if (typeof req.body === 'object') return req.body; // 이미 파싱됨
+    }
+    // 스트림에서 직접 읽기
+    const chunks = [];
+    for await (const chunk of req) chunks.push(chunk);
+    const raw = Buffer.concat(chunks).toString('utf8');
+    return raw ? JSON.parse(raw) : {};
+  } catch {
+    return {};
+  }
+}
+
+
+
 const stripInvis = (s) => String(s ?? '').replace(/[\u200B-\u200D\uFEFF]/g, ''); // ZWSP/ZWNJ/ZWJ/BOM
 const clean      = (s) => stripInvis(String(s ?? '')).normalize('NFKC').toLowerCase();
 const noSpace    = (s) => clean(s).replace(/\s+/g, '');
@@ -348,9 +369,9 @@ module.exports = async (req, res) => {
     /* ---------------------------------------------------------
      * POST: main FAQ lookup (질문 본문 + 선택 언어)
      * ------------------------------------------------------- */
-    if (req.method === 'POST') {
-      const body = req.body || {};
-      const question = String(body.question || '').trim();
+     if (req.method === 'POST') {
+     const body = await readJsonBody(req);
+     const question = String(body.question || '').trim();
 
       if (!question) {
         return res.status(400).json({ ok: false, error: 'Missing "question"' });
