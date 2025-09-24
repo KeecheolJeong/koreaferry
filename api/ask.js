@@ -1,9 +1,14 @@
-// api/ask.js — FINAL PRODUCTION BUILD v1.3
-// - Script-first detection with JA hints on Han
-// - Han-only short queries (<=2 chars) respect Accept-Language (JA > ZH-Hant)
-// - Chinese default: Traditional (zh-hant); unified pickAnswer fallback (Hant first)
-// - Robust GET/POST + CORS, BOM-safe JSON loader, exact-first matching
-// - Response includes url/url_title + answer_url/answer_title for widget compat
+// api/ask.js — FINAL PRODUCTION BUILD v1.5
+// -
+// - KEY UPDATE:
+// -   - Fixed Hanzi/Kanji ambiguity for words of any length (e.g., 自転車).
+// -   - `detectLang` now always prioritizes `Accept-Language` header for ambiguous
+// -     Han-only queries before falling back to keyword hints or defaults.
+// -
+// - FEATURES:
+// -   - Script-first language detection with robust ambiguity handling
+// -   - Unified GET/POST handler logic
+// -   - BOM-safe JSON loader, exact-first matching, CORS support
 
 const fs = require('fs');
 const path = require('path');
@@ -22,7 +27,7 @@ function safeLoadJson(p) {
 
 const FAQS = (() => {
   const candidates = [
-    path.join(__dirname, 'faqs.json'),           // recommended for Vercel bundling
+    path.join(__dirname, 'faqs.json'),      // recommended for Vercel bundling
     path.join(process.cwd(), 'api', 'faqs.json') // fallback
   ];
   for (const p of candidates) {
@@ -35,6 +40,7 @@ const FAQS = (() => {
   console.error('[ask] FATAL: Could not load faqs.json from any candidate path.');
   return [];
 })();
+
 
 /* ===== 2) CORS ===== */
 const ALLOW_ORIGINS = (process.env.ALLOW_ORIGINS || '*').split(',').map(s => s.trim());
@@ -49,9 +55,11 @@ function setCorsHeaders(res, origin) {
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
 }
 
+
 /* ===== 3) Matching Config ===== */
 const DEFAULT_THRESHOLD = Number(process.env.FAQ_THRESHOLD ?? 0.30);
 const MIN_QUERY_CHARS   = Number(process.env.FAQ_MIN_QUERY_CHARS ?? 2);
+
 
 /* ===== 4) Text utils & scoring ===== */
 const stripInvisibles = (s) => String(s ?? '').replace(/[\u200B-\u200D\uFEFF]/g, '');
@@ -79,13 +87,14 @@ const calculateScore = (q,c) => {
   return jaccard(getCharSet(Q), getCharSet(C));
 };
 
+
 /* ===== 5) Language detection & normalization ===== */
 const normalizeLangTag = (tag) => {
   const s = String(tag || '').toLowerCase().replace('_','-').trim();
   if (!s) return '';
   if (s === 'zh' || s.startsWith('zh-')) {
     if (s.includes('cn') || s.includes('sg') || s.includes('hans')) return 'zh-hans';
-    return 'zh-hant'; // default Chinese → Traditional
+    return 'zh-hant';
   }
   if (s === 'zh-tw' || s === 'zhtw') return 'zh-hant';
   if (s === 'zh-cn' || s === 'zhcn') return 'zh-hans';
@@ -95,8 +104,9 @@ const normalizeLangTag = (tag) => {
   return s;
 };
 
+// ==================== START: MODIFIED SECTION ====================
 function detectLang(query, req) {
-  // 0) explicit lang param/body
+  // Priority 1: Explicit `lang` parameter from user selection
   try {
     const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
     const param = url.searchParams.get('lang') || (req.body && req.body.lang);
@@ -105,42 +115,43 @@ function detectLang(query, req) {
 
   const s = String(query || '');
 
-  // tentative Accept-Language
-  let fromHeader = '';
-  try {
-    const header = String(req.headers['accept-language'] || '').toLowerCase();
-    if (header) {
-      const primary = header.split(',')[0];
-      fromHeader = normalizeLangTag(primary) || '';
-    }
-  } catch {}
-
-  // script-first
+  // Priority 2: Unambiguous scripts (Korean, Hiragana/Katakana)
   if (/[가-힣]/.test(s)) return 'ko';
   if (/[\u3040-\u309F]/.test(s) || /[\u30A0-\u30FF\uFF66-\uFF9F]/.test(s)) return 'ja';
+
+  // Priority 3: Ambiguous Han/Kanji script - requires more hints to decide
   if (/[\u4E00-\u9FFF]/.test(s)) {
-    // JA hints on Han (minimal but impactful)
-    const jaHints = /手荷物|船内持込|船內持込|運賃|無料|有料|予約|時刻表/;
+    // Hint 3a: Check browser's Accept-Language header FIRST. This is the strongest hint.
+    let fromHeader = '';
+    try {
+      const header = String(req.headers['accept-language'] || '').toLowerCase();
+      if (header) fromHeader = normalizeLangTag(header.split(',')[0]) || '';
+    } catch {}
+    
+    if (fromHeader === 'ja') return 'ja';
+    if (fromHeader && fromHeader.startsWith('zh')) return 'zh-hant';
+
+    // Hint 3b: If header is not decisive, check for Japanese-specific keywords.
+    const jaHints = /手荷物|船内持込|船內持込|運賃|無料|有料|予約|時刻表|自転車/;
     if (jaHints.test(s)) return 'ja';
 
-    // short Han-only (<=2 chars): rely on Accept-Language (ja > zh)
-    const onlyHan = s.replace(/[^\u4E00-\u9FFF]/g, '');
-    if (onlyHan.length > 0 && onlyHan.length <= 2) {
-      if (fromHeader === 'ja') return 'ja';
-      if (fromHeader && fromHeader.startsWith('zh')) return 'zh-hant';
-      return 'zh-hant'; // policy default
-    }
-    // otherwise default to Traditional Chinese
+    // Hint 3c: Default for any remaining Han characters.
     return 'zh-hant';
   }
 
-  // no script → header
+  // Priority 4: Fallback to header for non-scripted languages like English
+  let fromHeader = '';
+  try {
+    const header = String(req.headers['accept-language'] || '').toLowerCase();
+    if (header) fromHeader = normalizeLangTag(header.split(',')[0]) || '';
+  } catch {}
   if (fromHeader) return fromHeader;
 
-  // fallback
-  if (/[a-zA-Z]/.test(s)) return 'en';
+  // Final fallback
   return 'ko';
 }
+// ==================== END: MODIFIED SECTION ====================
+
 
 /* ===== 6) Answer selection (unified, Hant-first for ZH) ===== */
 const pickAnswer = (entry, langInput) => {
@@ -148,10 +159,10 @@ const pickAnswer = (entry, langInput) => {
   const answers = (entry.answers && typeof entry.answers === 'object') ? entry.answers : {};
   const m = {};
   for (const [k, v] of Object.entries(answers)) {
-    const kk = String(k).toLowerCase().replace('_','-'); // ko/ja/en/zh/zh-tw/zh-cn
+    const kk = String(k).toLowerCase().replace('_','-');
     m[kk] = v;
-    if (kk === 'zh-tw') m['zh-hant'] = v;               // normalize TW → Hant
-    if (kk === 'zh-cn' || kk === 'zh') m['zh-hans'] = v; // treat zh/zh-cn as Hans bucket
+    if (kk === 'zh-tw') m['zh-hant'] = v;
+    if (kk === 'zh-cn' || kk === 'zh') m['zh-hans'] = v;
   }
   return (
     m[lang] ||
@@ -161,6 +172,7 @@ const pickAnswer = (entry, langInput) => {
     Object.values(m)[0] || ''
   );
 };
+
 
 /* ===== 7) Candidates ===== */
 const buildCandidates = (faq) => {
@@ -176,6 +188,7 @@ const buildCandidates = (faq) => {
   (faq.keywords_related || []).forEach(v => add(v, 'related'));
   return out;
 };
+
 
 /* ===== 8) Matching (exact-first, 1-char exact) ===== */
 const findBestMatch = (question) => {
@@ -207,6 +220,7 @@ const findBestMatch = (question) => {
   return best.score >= DEFAULT_THRESHOLD ? best : null;
 };
 
+
 /* ===== 9) Helpers ===== */
 const getFallbackAnswer = (lang) => {
   const L = normalizeLangTag(lang);
@@ -219,8 +233,7 @@ const getFallbackAnswer = (lang) => {
 const buildResponse = (match, lang) => {
   let finalLang = normalizeLangTag(lang);
 
-  // safety net: if matched token is a known JA kanji term, force JA
-  const JA_KANJI_HINTS = new Set(['手荷物','船内持込','船內持込','運賃','無料']);
+  const JA_KANJI_HINTS = new Set(['手荷物','船内持込','船內持込','運賃','無料','自転車']);
   if (String(finalLang).startsWith('zh') && JA_KANJI_HINTS.has(String(match.matched || ''))) {
     finalLang = 'ja';
   }
@@ -257,6 +270,7 @@ async function readJsonBody(req) {
   } catch { return {}; }
 }
 
+
 /* ===== 10) Handler ===== */
 module.exports = async (req, res) => {
   try {
@@ -264,7 +278,7 @@ module.exports = async (req, res) => {
     if (req.method === 'OPTIONS') return res.status(204).end();
 
     let question = '';
-    let body = {}; // body를 밖에서 선언
+    let body = {};
 
     if (req.method === 'GET') {
       let qRaw = '';
@@ -275,7 +289,7 @@ module.exports = async (req, res) => {
       if (!qRaw) {
         return res.status(200).json({
           ok: true,
-          version: 'faq-api FINAL v1.4', // 버전 업데이트
+          version: 'faq-api FINAL v1.5',
           methods: ['GET','POST'],
           faqs_count: FAQS.length,
           sample: FAQS[0]?.question || null
@@ -284,7 +298,7 @@ module.exports = async (req, res) => {
       question = qRaw; try { question = decodeURIComponent(qRaw); } catch {}
 
     } else if (req.method === 'POST') {
-      body = await readJsonBody(req); // body 내용 채우기
+      body = await readJsonBody(req);
       question = String(body.question || '').trim();
       if (!question) return res.status(400).json({ ok: false, error: 'Missing "question" in POST body' });
 
@@ -292,17 +306,13 @@ module.exports = async (req, res) => {
       return res.status(405).json({ ok: false, error: 'Method Not Allowed' });
     }
     
-    // ===== 언어 감지 및 답변 검색 로직 통일 =====
-    // GET, POST 여부와 상관없이 무조건 여기서 언어를 단 한번만 결정합니다.
     const lang = detectLang(question, { ...req, body });
     const match = findBestMatch(question);
 
     if (!match) {
-      // 검색 실패 시, 위에서 결정된 lang 값을 그대로 사용합니다.
       return res.status(200).json({ ok: true, lang, match: null, answer: getFallbackAnswer(lang) });
     }
     
-    // 검색 성공 시, 위에서 결정된 lang 값을 그대로 사용합니다.
     return res.status(200).json(buildResponse(match, lang));
 
   } catch (e) {
