@@ -105,8 +105,9 @@ const normalizeLangTag = (tag) => {
 };
 
 // ==================== START: MODIFIED SECTION ====================
+// ask.js 파일의 기존 detectLang 함수를 아래 코드로 교체
 function detectLang(query, req) {
-  // Priority 1: Explicit `lang` parameter from user selection
+  // 1) Explicit lang param/body
   try {
     const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
     const param = url.searchParams.get('lang') || (req.body && req.body.lang);
@@ -115,55 +116,53 @@ function detectLang(query, req) {
 
   const s = String(query || '');
 
-  // Priority 2: Unambiguous scripts (Korean, Hiragana/Katakana)
+  // 2) Script-first detection
+  if (/[a-zA-Z]/.test(s)) return 'en'; // <<< 영어 감지 우선순위를 위로 올림
   if (/[가-힣]/.test(s)) return 'ko';
   if (/[\u3040-\u309F]/.test(s) || /[\u30A0-\u30FF\uFF66-\uFF9F]/.test(s)) return 'ja';
-
-  // Priority 3: Ambiguous Han/Kanji script - requires more hints to decide
   if (/[\u4E00-\u9FFF]/.test(s)) {
-    // Hint 3a: Check browser's Accept-Language header FIRST. This is the strongest hint.
     let fromHeader = '';
     try {
       const header = String(req.headers['accept-language'] || '').toLowerCase();
       if (header) fromHeader = normalizeLangTag(header.split(',')[0]) || '';
     } catch {}
-    
     if (fromHeader === 'ja') return 'ja';
     if (fromHeader && fromHeader.startsWith('zh')) return 'zh-hant';
-
-    // Hint 3b: If header is not decisive, check for Japanese-specific keywords.
     const jaHints = /手荷物|船内持込|船內持込|運賃|無料|有料|予約|時刻表|自転車/;
     if (jaHints.test(s)) return 'ja';
-
-    // Hint 3c: Default for any remaining Han characters.
     return 'zh-hant';
   }
 
-  // Priority 4: Fallback to header for non-scripted languages like English
+  // 3) Accept-Language as a tiebreaker
   let fromHeader = '';
   try {
     const header = String(req.headers['accept-language'] || '').toLowerCase();
     if (header) fromHeader = normalizeLangTag(header.split(',')[0]) || '';
   } catch {}
   if (fromHeader) return fromHeader;
-
-  // Final fallback
+  
+  // 4) Fallback
   return 'ko';
 }
 // ==================== END: MODIFIED SECTION ====================
 
 
+
+// ask.js 파일의 기존 pickAnswer 함수를 아래 코드로 교체
 /* ===== 6) Answer selection (unified, Hant-first for ZH) ===== */
 const pickAnswer = (entry, langInput) => {
   const lang = normalizeLangTag(langInput || '');
   const answers = (entry.answers && typeof entry.answers === 'object') ? entry.answers : {};
+
   const m = {};
   for (const [k, v] of Object.entries(answers)) {
-    const kk = String(k).toLowerCase().replace('_','-');
-    m[kk] = v;
+    // 키를 소문자로 정규화하는 부분을 수정하여 EN, JA, KO 등도 모두 처리
+    const kk = normalizeLangTag(k); // 기존 String(k).toLowerCase()... 대신 normalizeLangTag 사용
+    if (kk) m[kk] = v;
     if (kk === 'zh-tw') m['zh-hant'] = v;
     if (kk === 'zh-cn' || kk === 'zh') m['zh-hans'] = v;
   }
+  
   return (
     m[lang] ||
     (lang.startsWith('zh') ? (m['zh-hant'] || m['zh-tw']) : undefined) ||
