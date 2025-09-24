@@ -263,45 +263,48 @@ module.exports = async (req, res) => {
     setCorsHeaders(res, req.headers.origin);
     if (req.method === 'OPTIONS') return res.status(204).end();
 
+    let question = '';
+    let body = {}; // body를 밖에서 선언
+
     if (req.method === 'GET') {
-      let qRaw = '', diag = '';
+      let qRaw = '';
       try {
         const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
         qRaw = url.searchParams.get('q') || '';
-        diag = url.searchParams.get('diag') || '';
       } catch {}
       if (!qRaw) {
         return res.status(200).json({
           ok: true,
-          version: 'faq-api FINAL v1.3',
+          version: 'faq-api FINAL v1.4', // 버전 업데이트
           methods: ['GET','POST'],
           faqs_count: FAQS.length,
           sample: FAQS[0]?.question || null
         });
       }
-      let question = qRaw; try { question = decodeURIComponent(qRaw); } catch {}
-      const lang = detectLang(question, req);
-      const match = findBestMatch(question);
-      if (!match) {
-        return res.status(200).json({ ok: true, lang, match: null, answer: getFallbackAnswer(lang) });
-      }
-      return res.status(200).json(buildResponse(match, lang));
-    }
+      question = qRaw; try { question = decodeURIComponent(qRaw); } catch {}
 
-    if (req.method === 'POST') {
-      const body = await readJsonBody(req);
-      const question = String(body.question || '').trim();
+    } else if (req.method === 'POST') {
+      body = await readJsonBody(req); // body 내용 채우기
+      question = String(body.question || '').trim();
       if (!question) return res.status(400).json({ ok: false, error: 'Missing "question" in POST body' });
 
-      const lang = detectLang(question, { ...req, body });
-      const match = findBestMatch(question);
-      if (!match) {
-        return res.status(200).json({ ok: true, lang, match: null, answer: getFallbackAnswer(lang) });
-      }
-      return res.status(200).json(buildResponse(match, lang));
+    } else {
+      return res.status(405).json({ ok: false, error: 'Method Not Allowed' });
     }
+    
+    // ===== 언어 감지 및 답변 검색 로직 통일 =====
+    // GET, POST 여부와 상관없이 무조건 여기서 언어를 단 한번만 결정합니다.
+    const lang = detectLang(question, { ...req, body });
+    const match = findBestMatch(question);
 
-    return res.status(405).json({ ok: false, error: 'Method Not Allowed' });
+    if (!match) {
+      // 검색 실패 시, 위에서 결정된 lang 값을 그대로 사용합니다.
+      return res.status(200).json({ ok: true, lang, match: null, answer: getFallbackAnswer(lang) });
+    }
+    
+    // 검색 성공 시, 위에서 결정된 lang 값을 그대로 사용합니다.
+    return res.status(200).json(buildResponse(match, lang));
+
   } catch (e) {
     console.error('Server Error:', e);
     return res.status(500).json({ ok: false, error: e.message || 'Internal Server Error' });
