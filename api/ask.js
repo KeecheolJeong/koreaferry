@@ -1,7 +1,9 @@
-// api/ask.js — FINAL PRODUCTION BUILD v1.2
-// - Script-first detection (JA 힌트 포함), 중국어 기본 번체
-// - pickAnswer: 통일 로직 (요청 언어→중국어면 번체 우선→KO→JA→EN→기타 중국어→임의 1개)
-// - Robust GET/POST + CORS, BOM-safe JSON loader, exact-first 매칭
+// api/ask.js — FINAL PRODUCTION BUILD v1.3
+// - Script-first detection with JA hints on Han
+// - Han-only short queries (<=2 chars) respect Accept-Language (JA > ZH-Hant)
+// - Chinese default: Traditional (zh-hant); unified pickAnswer fallback (Hant first)
+// - Robust GET/POST + CORS, BOM-safe JSON loader, exact-first matching
+// - Response includes url/url_title + answer_url/answer_title for widget compat
 
 const fs = require('fs');
 const path = require('path');
@@ -10,17 +12,18 @@ const path = require('path');
 function safeLoadJson(p) {
   try {
     let raw = fs.readFileSync(p, 'utf8');
-    if (raw.charCodeAt(0) === 0xFEFF) raw = raw.slice(1);
+    if (raw.charCodeAt(0) === 0xFEFF) raw = raw.slice(1); // strip BOM
     return JSON.parse(raw);
   } catch (e) {
-    console.error(`[ask] JSON load failed for ${p}:`, e.message);
+    console.error(`[ask] JSON load failed for ${p}:`, e && e.message);
     return null;
   }
 }
+
 const FAQS = (() => {
   const candidates = [
-    path.join(__dirname, 'faqs.json'),
-    path.join(process.cwd(), 'api', 'faqs.json')
+    path.join(__dirname, 'faqs.json'),           // recommended for Vercel bundling
+    path.join(process.cwd(), 'api', 'faqs.json') // fallback
   ];
   for (const p of candidates) {
     const data = safeLoadJson(p);
@@ -56,19 +59,24 @@ const cleanText       = (s) => stripInvisibles(s).normalize('NFKC').toLowerCase(
 const removeSpaces    = (s) => cleanText(s).replace(/\s+/g, '');
 const getCharSet      = (s) => new Set(Array.from(removeSpaces(s)));
 const getBigramSet    = (s) => {
-  const t = removeSpaces(s); const out = new Set();
+  const t = removeSpaces(s);
+  const out = new Set();
   if (t.length < 2) return out;
-  for (let i=0;i<t.length-1;i++) out.add(t.slice(i,i+2));
+  for (let i = 0; i < t.length - 1; i++) out.add(t.slice(i, i + 2));
   return out;
 };
-const jaccard = (A,B) => { if(!A.size||!B.size) return 0; let I=0; for(const v of A) if(B.has(v)) I++; return I/(A.size+B.size-I); };
+const jaccard = (A,B) => {
+  if (!A.size || !B.size) return 0;
+  let I = 0; for (const v of A) if (B.has(v)) I++;
+  return I / (A.size + B.size - I);
+};
 const calculateScore = (q,c) => {
-  const Q=removeSpaces(q), C=removeSpaces(c);
-  if(!Q||!C) return 0;
-  if(Q===C) return 1.0;
-  if(Q.includes(C)||C.includes(Q)) return 0.98;
-  const s1=jaccard(getBigramSet(Q),getBigramSet(C)); if(s1>0) return s1;
-  return jaccard(getCharSet(Q),getCharSet(C));
+  const Q = removeSpaces(q), C = removeSpaces(c);
+  if (!Q || !C) return 0;
+  if (Q === C) return 1.0;
+  if (Q.includes(C) || C.includes(Q)) return 0.98;
+  const s1 = jaccard(getBigramSet(Q), getBigramSet(C)); if (s1 > 0) return s1;
+  return jaccard(getCharSet(Q), getCharSet(C));
 };
 
 /* ===== 5) Language detection & normalization ===== */
@@ -77,7 +85,7 @@ const normalizeLangTag = (tag) => {
   if (!s) return '';
   if (s === 'zh' || s.startsWith('zh-')) {
     if (s.includes('cn') || s.includes('sg') || s.includes('hans')) return 'zh-hans';
-    return 'zh-hant';
+    return 'zh-hant'; // default Chinese → Traditional
   }
   if (s === 'zh-tw' || s === 'zhtw') return 'zh-hant';
   if (s === 'zh-cn' || s === 'zhcn') return 'zh-hans';
@@ -86,45 +94,64 @@ const normalizeLangTag = (tag) => {
   if (s.startsWith('en')) return 'en';
   return s;
 };
-const detectLang = (query, req) => {
-  // 1) ?lang / body.lang
+
+function detectLang(query, req) {
+  // 0) explicit lang param/body
   try {
     const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
     const param = url.searchParams.get('lang') || (req.body && req.body.lang);
     if (param && String(param).toLowerCase() !== 'auto') return normalizeLangTag(param);
   } catch {}
+
   const s = String(query || '');
-  // 2) script-first
-  if (/[가-힣]/.test(s)) return 'ko';
-  if (/[\u3040-\u309F]/.test(s) || /[\u30A0-\u30FF\uFF66-\uFF9F]/.test(s)) return 'ja';
-  if (/[\u4E00-\u9FFF]/.test(s)) {
-    if (/手荷物|船内持込|船內持込|円|樣|様|さん|です|ます|ください|頂き/.test(s)) return 'ja';
-    return 'zh-hant';
-  }
-  // 3) Accept-Language
+
+  // tentative Accept-Language
+  let fromHeader = '';
   try {
     const header = String(req.headers['accept-language'] || '').toLowerCase();
     if (header) {
       const primary = header.split(',')[0];
-      const normalized = normalizeLangTag(primary);
-      if (normalized) return normalized;
+      fromHeader = normalizeLangTag(primary) || '';
     }
   } catch {}
-  // 4) fallback
+
+  // script-first
+  if (/[가-힣]/.test(s)) return 'ko';
+  if (/[\u3040-\u309F]/.test(s) || /[\u30A0-\u30FF\uFF66-\uFF9F]/.test(s)) return 'ja';
+  if (/[\u4E00-\u9FFF]/.test(s)) {
+    // JA hints on Han (minimal but impactful)
+    const jaHints = /手荷物|船内持込|船內持込|運賃|無料|有料|予約|時刻表/;
+    if (jaHints.test(s)) return 'ja';
+
+    // short Han-only (<=2 chars): rely on Accept-Language (ja > zh)
+    const onlyHan = s.replace(/[^\u4E00-\u9FFF]/g, '');
+    if (onlyHan.length > 0 && onlyHan.length <= 2) {
+      if (fromHeader === 'ja') return 'ja';
+      if (fromHeader && fromHeader.startsWith('zh')) return 'zh-hant';
+      return 'zh-hant'; // policy default
+    }
+    // otherwise default to Traditional Chinese
+    return 'zh-hant';
+  }
+
+  // no script → header
+  if (fromHeader) return fromHeader;
+
+  // fallback
   if (/[a-zA-Z]/.test(s)) return 'en';
   return 'ko';
-};
+}
 
-/* ===== 6) Answer selection (통일 로직) ===== */
+/* ===== 6) Answer selection (unified, Hant-first for ZH) ===== */
 const pickAnswer = (entry, langInput) => {
   const lang = normalizeLangTag(langInput || '');
   const answers = (entry.answers && typeof entry.answers === 'object') ? entry.answers : {};
   const m = {};
   for (const [k, v] of Object.entries(answers)) {
-    const kk = String(k).toLowerCase().replace('_', '-');
+    const kk = String(k).toLowerCase().replace('_','-'); // ko/ja/en/zh/zh-tw/zh-cn
     m[kk] = v;
-    if (kk === 'zh-tw') m['zh-hant'] = v;
-    if (kk === 'zh-cn' || kk === 'zh') m['zh-hans'] = v;
+    if (kk === 'zh-tw') m['zh-hant'] = v;               // normalize TW → Hant
+    if (kk === 'zh-cn' || kk === 'zh') m['zh-hans'] = v; // treat zh/zh-cn as Hans bucket
   }
   return (
     m[lang] ||
@@ -154,6 +181,7 @@ const buildCandidates = (faq) => {
 const findBestMatch = (question) => {
   const q = String(question || '').trim();
   const qClean = removeSpaces(q);
+
   if (qClean.length < MIN_QUERY_CHARS) {
     for (const f of FAQS) {
       for (const c of buildCandidates(f)) {
@@ -164,6 +192,7 @@ const findBestMatch = (question) => {
     }
     return null;
   }
+
   let best = { score: -1, entry: null, matched: '', from: '' };
   for (const f of FAQS) {
     for (const c of buildCandidates(f)) {
@@ -186,15 +215,20 @@ const getFallbackAnswer = (lang) => {
   if (L === 'en')         return 'For this question, please contact the ferry operator by phone. [Tel] 1688-7447';
   return '이 질문은 선사에 전화문의 부탁드립니다. [전화번호]1688-7447';
 };
+
 const buildResponse = (match, lang) => {
   let finalLang = normalizeLangTag(lang);
-  const JA_KANJI_HINTS = new Set(['手荷物','船内持込','船內持込']);
+
+  // safety net: if matched token is a known JA kanji term, force JA
+  const JA_KANJI_HINTS = new Set(['手荷物','船内持込','船內持込','運賃','無料']);
   if (String(finalLang).startsWith('zh') && JA_KANJI_HINTS.has(String(match.matched || ''))) {
     finalLang = 'ja';
   }
+
   const url = match.entry.url || null;
   const url_title = match.entry.url_title || null;
   const sources = url ? [{ id: match.entry.id, url, title: url_title || url }] : undefined;
+
   return {
     ok: true,
     lang: finalLang,
@@ -206,11 +240,14 @@ const buildResponse = (match, lang) => {
       score: +match.score.toFixed(3)
     },
     answer: pickAnswer(match.entry, finalLang),
-    url, url_title,
-    answer_url: url, answer_title: url_title,
+    url,
+    url_title,
+    answer_url: url,
+    answer_title: url_title,
     sources
   };
 };
+
 async function readJsonBody(req) {
   try {
     if (req.body) return (typeof req.body === 'object') ? req.body : JSON.parse(req.body);
@@ -227,15 +264,16 @@ module.exports = async (req, res) => {
     if (req.method === 'OPTIONS') return res.status(204).end();
 
     if (req.method === 'GET') {
-      let qRaw = '';
+      let qRaw = '', diag = '';
       try {
         const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
         qRaw = url.searchParams.get('q') || '';
+        diag = url.searchParams.get('diag') || '';
       } catch {}
       if (!qRaw) {
         return res.status(200).json({
           ok: true,
-          version: 'faq-api FINAL v1.2',
+          version: 'faq-api FINAL v1.3',
           methods: ['GET','POST'],
           faqs_count: FAQS.length,
           sample: FAQS[0]?.question || null
@@ -244,7 +282,9 @@ module.exports = async (req, res) => {
       let question = qRaw; try { question = decodeURIComponent(qRaw); } catch {}
       const lang = detectLang(question, req);
       const match = findBestMatch(question);
-      if (!match) return res.status(200).json({ ok: true, lang, match: null, answer: getFallbackAnswer(lang) });
+      if (!match) {
+        return res.status(200).json({ ok: true, lang, match: null, answer: getFallbackAnswer(lang) });
+      }
       return res.status(200).json(buildResponse(match, lang));
     }
 
@@ -252,9 +292,12 @@ module.exports = async (req, res) => {
       const body = await readJsonBody(req);
       const question = String(body.question || '').trim();
       if (!question) return res.status(400).json({ ok: false, error: 'Missing "question" in POST body' });
+
       const lang = detectLang(question, { ...req, body });
       const match = findBestMatch(question);
-      if (!match) return res.status(200).json({ ok: true, lang, match: null, answer: getFallbackAnswer(lang) });
+      if (!match) {
+        return res.status(200).json({ ok: true, lang, match: null, answer: getFallbackAnswer(lang) });
+      }
       return res.status(200).json(buildResponse(match, lang));
     }
 
