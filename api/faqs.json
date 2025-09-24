@@ -1,3 +1,4 @@
+
 [
   {
     "id": "faq_baggage_001",
@@ -32,5 +33,55 @@
     },
     "url": "https://www.koreaferry.com/user_guide/baggage_fee/",
     "url_title": "<자세히보기>"
+  },
+
+
+
+
+{
+    "id": "faq_restaurant_001",
+    "question": "선내식",
+    "aliases": [
+      "식사",
+      "식당",
+      "레스토랑",
+      "밥",
+      "meal",
+      "restaurant",
+      "food",
+      "食事",
+      "朝食",
+      "夕食",
+      "船上レストラン",
+      "船上餐廳",
+      "食券販賣機"
+    ],
+    "keywords_core": [
+      "선내식",
+      "식당",
+      "meal",
+      "restaurant",
+      "breakfast",
+      "dinner",
+      "食事"
+    ],
+    "keywords_related": [
+      "조식",
+      "석식",
+      "아침",
+      "저녁",
+      "lunch",
+      "중식"
+    ],
+    "answers": {
+      "KO": "[요점] 선내 레스토랑(비너스)은 조식과 석식 운영하며, 레스토랑 입구 식권 발매기에서 식권을 구입 후 이용하실 수 있습니다.\n[보충설명] 중식은 운영하지 않습니다. 조식은 미역국정식, 석식은 선택식입니다.",
+      "JA": "[要点] 船内レストラン（ビーナス）は朝食と夕食を提供しており、入口の食券機で食券を購入してご利用ください。昼食は営業していません。朝食はわかめスープ定食、夕食は選択式です。",
+      "ZH_TW": "[核心] 船上餐廳（維納斯）供應早餐與晚餐，可在入口處食券販賣機購買食券後使用。午餐不提供。早餐為海帶湯套餐，晚餐為多樣選擇。",
+      "EN": "[Key] The onboard restaurant (Venus) serves breakfast and dinner. Meal tickets can be purchased at the vending machine at the entrance. Lunch is not available. Breakfast is a seaweed soup set menu, and dinner is selectable."
+    },
+    "url": "https://www.koreaferry.com/facilities/facilities_restraunt/",
+    "url_title": "<자세히보기>"
   }
+  
+  
 ]
