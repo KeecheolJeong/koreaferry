@@ -103,5 +103,43 @@
     },
     "url": "https://www.koreaferry.com/facilities/facilities_bath/",
     "url_title": "<자세히보기>"
-  }
+  },
+{
+  "id": "faq_dutyfree_001",
+  "question": {
+    "ko": "면세점",
+    "ja": "免税店",
+    "zh_tw": "免稅店",
+    "en": "Duty Free Shop"
+  },
+  "aliases": {
+    "ko": ["면세", "면세점", "술", "양주", "담배", "면세품", "쇼핑"],
+    "ja": ["免税", "免税店", "酒", "洋酒", "タバコ", "免税品", "ショッピング"],
+    "zh_tw": ["免稅", "免稅店", "酒", "洋酒", "香菸", "免稅品", "購物"],
+    "en": ["duty free", "duty free shop", "liquor", "whiskey", "cigarettes", "tax free goods", "shopping"]
+  },
+  "keywords_core": {
+    "ko": ["쿠보다", "히요코", "로이스"],
+    "ja": ["クボタ", "ひよこ", "ロイズ"],
+    "zh_tw": ["久保田", "小雞餅乾", "ROYCE"],
+    "en": ["Kubota", "Hiyoko", "Royce"]
+  },
+  "keywords_related": {
+    "ko": ["컵라면", "라면", "일회용품", "신용카드", "현금", "엔화"],
+    "ja": ["カップラーメン", "ラーメン", "使い捨て用品", "クレジットカード", "現金", "日本円"],
+    "zh_tw": ["杯麵", "拉麵", "一次性用品", "信用卡", "現金", "日圓"],
+    "en": ["cup noodles", "ramen", "disposables", "credit card", "cash", "Japanese yen"]
+  },
+  "answers": {
+    "KO": "★ 선내 면세점은 3층 편의점과 함께 운영하고 있으며 술, 담배, 기념품 등을 구입하실 수 있습니다.\n[보충설명] 면세품 운영시간은 편의점 이용시간과 다릅니다.",
+    "JA": "★ 船内の免税店は3階のコンビニと併設されており、お酒・タバコ・お土産などをご購入いただけます。\n[補足] 免税品の営業時間はコンビニの営業時間とは異なります。",
+    "ZH_TW": "★ 船上的免稅店與三樓便利店一同營運，可購買酒類、香菸及紀念品等。\n[補充] 免稅品的營業時間與便利店不同。",
+    "EN": "★ The onboard duty free shop operates together with the convenience store on the 3rd floor, offering liquor, cigarettes, and souvenirs.\n[Note] Duty free shop hours differ from the convenience store hours."
+  },
+  "url": "https://www.koreaferry.com/facilities/facilities_duty_free/",
+  "url_title": "<자세히보기>"
+}
+
+  
+  
 ]
