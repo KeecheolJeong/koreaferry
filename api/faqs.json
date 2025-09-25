@@ -138,7 +138,47 @@
   },
   "url": "https://www.koreaferry.com/facilities/facilities_duty_free/",
   "url_title": "<자세히보기>"
+},
+
+
+{
+  "id": "faq_convenience_001",
+  "question": {
+    "ko": "편의점",
+    "ja": "コンビニエンスストア",
+    "zh_tw": "便利商店",
+    "en": "Convenience Store"
+  },
+  "aliases": {
+    "ko": ["매점", "구매", "음료", "과자", "라면", "일회용품", "생활용품", "쇼핑"],
+    "ja": ["売店", "コンビニ", "飲み物", "お菓子", "カップラーメン", "日用品"],
+    "zh_tw": ["賣店", "便利店", "飲料", "零食", "泡麵", "生活用品"],
+    "en": ["store", "shop", "snack", "drink", "ramen", "instant noodles", "daily goods"]
+  },
+  "keywords_core": {
+    "ko": ["편의점", "매점"],
+    "ja": ["コンビニ", "売店"],
+    "zh_tw": ["便利商店", "賣店"],
+    "en": ["convenience store", "store"]
+  },
+  "keywords_related": {
+    "ko": ["컵라면", "라면", "음료", "간식", "생활용품", "신용카드", "현금", "엔화"],
+    "ja": ["カップラーメン", "飲み物", "スナック", "日用品", "クレジットカード", "現金", "円"],
+    "zh_tw": ["泡麵", "飲料", "零食", "日用品", "信用卡", "現金", "日圓"],
+    "en": ["ramen", "snack", "drink", "daily goods", "credit card", "cash", "yen"]
+  },
+  "answers": {
+    "KO": "★ 3층 편의점에서는 음료, 과자, 컵라면, 생활용품 등을 구입하실 수 있습니다.\n[보충설명] 운영시간은 선내 공지에 따릅니다.",
+    "JA": "★ 3階のコンビニエンスストアでは、飲み物、お菓子、カップラーメン、日用品などをご購入いただけます。\n[補足] 営業時間は船内の案内に従ってください。",
+    "ZH_TW": "★ 3樓便利商店販售飲料、零食、泡麵及生活用品等。\n[補充] 營業時間依船內公告為準。",
+    "EN": "★ The convenience store on the 3rd floor sells drinks, snacks, instant noodles, and daily goods.\n[Note] Opening hours follow the onboard notice."
+  },
+  "url": "https://www.koreaferry.com/facilities/facilities_convenience/",
+  "url_title": "<자세히보기>"
 }
+
+
+
 
   
   
