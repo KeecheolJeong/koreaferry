@@ -1,72 +1,128 @@
 
 [
-  {
-    "id": "faq_baggage_001",
-    "question": "수하물",
-    "aliases": [
-      "짐",
-      "캐리어",
-      "baggage",
-      "luggage",
-      "荷物",
-      "手荷物",
-      "船内持込",
-      "行李"
-    ],
-    "keywords_core": [
-      "수하물",
-      "baggage",
-      "luggage",
-      "手荷物"
-    ],
-    "keywords_related": [
-      "반입",
-      "추가요금",
-      "특수수하물",
-      "자전거"
-    ],
-    "answers": {
-      "KO": "[요점] 선내 반입은 30kg까지 무료이며 위탁수하물은 유료입니다. 기준과 추가요금은 아래 링크를 참고하세요.\n[보충설명] 자전거·서핑보드 등 특수수하물은 사전 문의를 권장합니다.",
-      "JA": "[要点] 船内持込は30kgまで無料、受託手荷物は有料です。基準および追加料金は下記リンクをご確認ください。\n[補足] 自転車・サーフボード等の特殊手荷物は事前にお問い合わせください。",
-      "ZH_TW": "[核心] 船內隨身攜帶行李30kg以內免費；託運行李需付費。詳見下方連結之標準與額外費用。\n[補充] 自行車、衝浪板等特殊行李建議事先詢問。",
-      "EN": "[Key] Carry-on up to 30 kg per passenger is free; checked baggage is chargeable. See the link below for limits and fees.\n[Note] Special items (e.g., bicycle, surfboard) may require prior inquiry."
-    },
-    "url": "https://www.koreaferry.com/user_guide/baggage_fee/",
-    "url_title": "<자세히보기>"
+  "id": "faq_baggage_001",
+  "question": {
+    "ko": "수하물",
+    "ja": "手荷物",
+    "zh_tw": "行李",
+    "en": "Baggage"
   },
-
+  "aliases": {
+    "ko": ["짐", "캐리어", "화물", "가방"],
+    "ja": ["荷物", "船内持込", "受託手荷物"],
+    "zh_tw": ["行李", "隨身行李", "托運行李", "船內攜帶"],
+    "en": ["baggage", "luggage", "carry-on", "checked baggage"]
+  },
+  "keywords_core": {
+    "ko": ["수하물", "짐"],
+    "ja": ["手荷物", "荷物"],
+    "zh_tw": ["行李"],
+    "en": ["baggage", "luggage"]
+  },
+  "keywords_related": {
+    "ko": ["반입", "추가요금", "특수수하물", "자전거", "서핑보드"],
+    "ja": ["追加料金", "特殊手荷物", "自転車", "サーフボード"],
+    "zh_tw": ["額外費用", "特殊行李", "自行車", "衝浪板"],
+    "en": ["extra charge", "special baggage", "bicycle", "surfboard"]
+  },
+  "answers": {
+    "KO": "★선내 반입은 30kg까지 무료이며 위탁수하물은 유료입니다. 기준과 추가요금은 아래 링크를 참고하세요.\n[추가안내] 자전거·서핑보드 등 특수수하물은 사전 문의를 권장합니다.",
+    "JA": "★船内持込は30kgまで無料、受託手荷物は有料です。基準および追加料金は下記リンクをご確認ください。\n[補足] 自転車・サーフボード等の特殊手荷物は事前にお問い合わせください。",
+    "ZH_TW": "★船內隨身攜帶行李30kg以內免費；託運行李需付費。詳見下方連結之標準與額外費用。\n[補充] 自行車、衝浪板等特殊行李建議事先詢問。",
+    "EN": "★Carry-on up to 30 kg per passenger is free; checked baggage is chargeable. See the link below for limits and fees.\n[Note] Special items (e.g., bicycle, surfboard) may require prior inquiry."
+  },
+  "url": "https://www.koreaferry.com/user_guide/baggage_fee/",
+  "url_title": "<자세히보기>"
+},
 
 
 
 {
   "id": "faq_restaurant_001",
-  "question": "선내식",
-  "aliases": [
-    "식사", "식당", "meal", "restaurant", "食事",
-    "朝食", "夕食",
-    "レストラン", "ビーナス",
-    "船上餐廳", "船上餐厅",   
-    "餐廳", "餐厅"
-  ],
-  "keywords_core": [
-    "선내식", "meal", "restaurant",
-    "朝食", "夕食",
-    "船上餐廳"
-  ],
-  "keywords_related": [
-    "조식", "중식", "석식", "레스토랑",
-    "식권", "食券", "食券機", "販賣機", "販売機"  
-  ],
+  "question": {
+    "ko": "식사",
+    "ja": "食事",
+    "zh_tw": "船上餐廳",
+    "en": "Meals"
+  },
+  "aliases": {
+    "ko": ["식당", "레스토랑", "중식", "점심", "저녁", "조식", "음식", "뷔페", "비너스", "식권기", "발매기"],
+    "ja": ["船内食", "食事", "朝食", "夕食", "昼食", "レストラン", "ビーナス"],
+    "zh_tw": ["用餐", "餐飲", "餐廳", "早餐", "午餐", "晚餐", "船上餐廳", "食券", "販賣機"],
+    "en": ["meal", "meals", "restaurant", "food", "lunch", "dinner", "breakfast", "meal ticket", "ticket machine"]
+  },
+  "keywords_core": {
+    "ko": ["선내식"],
+    "ja": ["食事", "朝食", "夕食"],
+    "zh_tw": ["船上餐廳", "用餐", "餐飲"],
+    "en": ["meal", "restaurant"]
+  },
+  "keywords_related": {
+    "ko": ["식권", "음식", "도시락"],
+    "ja": ["食券", "食券機"],
+    "zh_tw": ["食券", "販賣機"],
+    "en": ["breakfast", "dinner", "vending machine", "meal ticket"]
+  },
   "answers": {
-    "KO": "[요점] 선내 레스토랑(비너스)은 조식과 석식 운영하며, 레스토랑 입구 식권 발매기에서 식권을 구입 후 이용하실 수 있습니다.\n[보충설명] 식권 1매 당 1,000엔 내외.\n중식은 운영안함.\n조식은 미역국정식.\n석식은 선택.",
-    "JA": "[要点] 船内レストラン（ビーナス）は朝食と夕食を提供しており、入口の食券機で食券を購入してご利用ください。昼食は営業していません。朝食はわかめスープ定食、夕食は選択式です。",
-    "ZH_TW": "[核心] 船上餐廳（維納斯）供應早餐與晚餐，可在入口處食券販賣機購買食券後使用。午餐不提供。早餐為海帶湯套餐，晚餐為多樣選擇。",
-    "EN": "[Key] The onboard restaurant (Venus) serves breakfast and dinner. Meal tickets can be purchased at the vending machine at the entrance. Lunch is not available. Breakfast is a seaweed soup set. Dinner is selectable."
+    "KO": "★ 선내 레스토랑(비너스)은 조식과 석식 운영하며, 레스토랑 입구 식권 발매기에서 식권을 구입 후 이용하실 수 있습니다.\n[추가안내] 중식은 운영하지 않습니다. 조식은 미역국정식, 석식은 선택식입니다.",
+    "JA": "★ 船内レストラン（ビーナス）は朝食と夕食を提供しており、入口の食券機で食券を購入してご利用ください。昼食は営業していません。朝食はわかめスープ定食、夕食は選択式です。",
+    "ZH_TW": "★ 船上餐廳（維納斯）供應早餐與晚餐，可在入口處食券販賣機購買食券後使用。午餐不提供。早餐為海帶湯套餐，晚餐為多樣選擇。",
+    "EN": "★ The onboard restaurant (Venus) serves breakfast and dinner. Meal tickets can be purchased from the vending machine at the entrance. Lunch is not available. Breakfast is a seaweed soup set menu, and dinner is selectable."
   },
   "url": "https://www.koreaferry.com/facilities/facilities_restraunt/",
   "url_title": "<자세히보기>"
+},
+
+
+{
+  "id": "faq_bath_001",
+  "question": {
+    "ko": "목욕탕",
+    "ja": "大浴場",
+    "zh_tw": "大浴場",
+    "en": "Public Bath"
+  },
+  "aliases": {
+    "ko": ["목욕", "샤워", "세면대", "샤워장", "대목욕탕", "온탕", "온천"],
+    "ja": ["浴場", "風呂", "シャワー", "大浴場", "入浴"],
+    "zh_tw": ["大浴場", "浴室", "浴場", "淋浴", "洗澡", "澡堂"],
+    "en": ["bath", "public bath", "bathhouse", "shower room", "spa", "hot bath"]
+  },
+  "keywords_core": {
+    "ko": ["목욕탕", "대욕장", "샤워"],
+    "ja": ["大浴場", "浴場", "風呂"],
+    "zh_tw": ["大浴場", "浴室", "澡堂"],
+    "en": ["public bath", "bathhouse", "shower"]
+  },
+  "keywords_related": {
+    "ko": ["손씻기", "화장실", "비데", "드라이기", "코인락커", "타올"],
+    "ja": ["シャワー", "ドライヤー", "コインロッカー", "タオル"],
+    "zh_tw": ["淋浴", "吹風機", "投幣式置物櫃", "毛巾"],
+    "en": ["shampoo", "body wash", "hair dryer", "coin locker", "towel"]
+  },
+  "answers": {
+    "KO": "★ 3층 대욕장은 무료로 이용하실 수 있으며 샴푸, 바디워시, 헤어드라이기, 코인락커 등을 구비하고 있습니다.\n[추가안내] 타올은 비치되어 있지 않으므로 별도 준비해 주세요.",
+    "JA": "★ 3階の大浴場は無料でご利用いただけます。シャンプー、ボディソープ、ヘアドライヤー、コインロッカーなどが備え付けられています。\n[補足] タオルは備え付けられていませんので各自でご用意ください。",
+    "ZH_TW": "★ 3樓大浴場可免費使用，內備有洗髮精、沐浴乳、吹風機與投幣式置物櫃等設施。\n[補充] 未提供毛巾，請自行攜帶。",
+    "EN": "★ The public bath on the 3rd floor is free of charge and equipped with shampoo, body wash, hair dryers, and coin lockers.\n[Note] Towels are not provided, please bring your own."
+  },
+  "url": "https://www.koreaferry.com/facilities/facilities_bath/",
+  "url_title": "<자세히보기>"
 }
 
-  
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 ]
