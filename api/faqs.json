@@ -168,15 +168,51 @@
     "en": ["ramen", "snack", "drink", "daily goods", "credit card", "cash", "yen"]
   },
   "answers": {
-    "KO": "★ 3층 편의점에서는 음료, 과자, 컵라면, 생활용품 등을 구입하실 수 있습니다.\n[보충설명] 운영시간은 선내 공지에 따릅니다.",
+    "KO": "★ 3층 편의점에서는 음료, 과자, 컵라면, 생활용품 등을 구입하실 수 있습니다.\n[추가안내] 운영시간은 선내 공지에 따릅니다.",
     "JA": "★ 3階のコンビニエンスストアでは、飲み物、お菓子、カップラーメン、日用品などをご購入いただけます。\n[補足] 営業時間は船内の案内に従ってください。",
     "ZH_TW": "★ 3樓便利商店販售飲料、零食、泡麵及生活用品等。\n[補充] 營業時間依船內公告為準。",
     "EN": "★ The convenience store on the 3rd floor sells drinks, snacks, instant noodles, and daily goods.\n[Note] Opening hours follow the onboard notice."
   },
   "url": "https://www.koreaferry.com/facilities/facilities_convenience/",
   "url_title": "<자세히보기>"
-}
+},
 
+
+{
+  "id": "faq_karaoke_001",
+  "question": {
+    "ko": "노래방",
+    "ja": "カラオケ",
+    "zh_tw": "卡拉OK",
+    "en": "Karaoke"
+  },
+  "aliases": {
+    "ko": ["가라오케", "노래", "노래연습장", "오락"],
+    "ja": ["カラオケルーム", "歌", "歌唱", "娯楽"],
+    "zh_tw": ["卡拉OK室", "唱歌", "娛樂"],
+    "en": ["karaoke room", "singing", "music", "entertainment"]
+  },
+  "keywords_core": {
+    "ko": ["노래방", "가라오케"],
+    "ja": ["カラオケ", "カラオケルーム"],
+    "zh_tw": ["卡拉OK", "卡拉OK室"],
+    "en": ["karaoke", "karaoke room"]
+  },
+  "keywords_related": {
+    "ko": ["마이크", "음악", "오락", "노래부르기"],
+    "ja": ["マイク", "音楽", "娯楽", "歌う"],
+    "zh_tw": ["麥克風", "音樂", "娛樂", "唱歌"],
+    "en": ["microphone", "music", "song", "entertainment"]
+  },
+  "answers": {
+    "KO": "★ 3층 노래방은 코인식으로 운영되며 최신곡부터 인기곡까지 다양한 노래를 즐기실 수 있습니다.\n[추가안내] 운영시간은 선내 공지에 따릅니다.",
+    "JA": "★ 3階のカラオケルームはコイン式で、最新曲から人気曲まで幅広くお楽しみいただけます。\n[補足] 営業時間は船内の案内に従ってください。",
+    "ZH_TW": "★ 3樓卡拉OK室採投幣式，提供最新及熱門歌曲供乘客歡唱。\n[補充] 營業時間依船內公告為準。",
+    "EN": "★ The karaoke room on the 3rd floor is coin-operated and offers a wide selection of songs, from the latest hits to popular classics.\n[Note] Opening hours follow the onboard notice."
+  },
+  "url": "https://www.koreaferry.com/facilities/facilities_karaoke/",
+  "url_title": "<자세히보기>"
+}
 
 
 
