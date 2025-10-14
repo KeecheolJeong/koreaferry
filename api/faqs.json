@@ -324,7 +324,46 @@
   },
   "url": "https://www.koreaferry.com/user_guide/need_help/",
   "url_title": "<자세히보기>"
+},
+
+
+
+{
+  "id": "faq_pregnant_customers_001",
+  "question": {
+    "ko": "임산부",
+    "ja": "妊婦",
+    "zh_tw": "孕婦",
+    "en": "Pregnant passengers"
+  },
+  "aliases": {
+    "ko": ["임신", "임신부", "임신중", "임산부탑승"],
+    "ja": ["妊婦", "妊娠中", "妊娠"],
+    "zh_tw": ["孕婦", "懷孕", "孕期旅客"],
+    "en": ["pregnant", "pregnancy", "pregnant woman", "expectant mother"]
+  },
+  "keywords_core": {
+    "ko": ["임산부", "임신부"],
+    "ja": ["妊婦", "妊娠"],
+    "zh_tw": ["孕婦", "懷孕"],
+    "en": ["pregnant", "pregnancy"]
+  },
+  "keywords_related": {
+    "ko": ["임신부승선", "임신몇주", "임산부승선", "임산부탑승", "임산부동의서"],
+    "ja": ["妊婦乗船", "妊娠週数", "同意書", "乗船制限"],
+    "zh_tw": ["孕婦登船", "懷孕週數", "同意書", "登船限制"],
+    "en": ["pregnant boarding", "pregnancy weeks", "consent form", "boarding restriction"]
+  },
+  "answers": {
+    "KO": "★예약 시 반드시 임신 사실을 알려주셔야 하며, 임신 주수와 관계없이 동의서 작성이 필요합니다. 또한 당사 선박에는 의료진(의사·간호사)이 승선하고 있지 않으며, 충분한 의료 설비와 의약품이 구비되어 있지 않습니다.\n\n기상에 따른 선체 동요 및 장시간 운항 중 예기치 못한 상황이 발생할 수 있으므로, 고객님의 안전을 보장할 수 없다고 판단되는 경우 승선이 제한될 수 있습니다.\n\n임신 32주 미만: 의사로부터 선박 및 해외 여행 금지를 권고받은 경우를 제외하고 일반인과 동일하게 여행이 가능합니다. 단, 의사의 소견서를 발급받아 서약서와 함께 승선 당일 카운터에 제출해 주시기 바랍니다.\n\n임신 32주 이상: 태아와 임산부 본인의 안전을 위해 당사 선박 이용은 불가하오니 양해 부탁드립니다.",
+    "JA": "★ご予約の際、必ず妊娠中であることをお知らせください。妊娠週数に関わらず同意書のご提出が必要です。また、当社の船舶には医師や看護師は乗船しておらず、十分な医療設備や医薬品も備えておりません。\n\n天候による揺れや長時間航行中に予期せぬ事態が発生する可能性があるため、安全を確保できないと判断された場合はご乗船をお断りする場合があります。\n\n妊娠32週未満：医師から乗船や海外旅行の制限を受けていない限り、一般のお客様と同様にご利用いただけます。医師の診断書を取得し、誓約書とともに当日カウンターへご提出ください。\n\n妊娠32週以上：お客様と胎児の安全のため、ご乗船いただけませんのでご了承ください。",
+    "ZH_TW": "★預訂時請務必告知懷孕狀況，無論孕期週數皆需填寫同意書。此外，本公司船舶上無醫療人員（醫師、護理師），亦無完善醫療設備及藥品。\n\n由於天候造成的船體搖晃與長時間航行可能引發突發狀況，若判斷無法確保安全，可能會限制登船。\n\n懷孕未滿32週：除非醫師建議不得搭船或出國，否則可與一般旅客相同登船。請攜帶醫師診斷證明，並於登船當日與切結書一併提交至櫃檯。\n\n懷孕32週以上：為了孕婦與胎兒的安全，恕無法提供搭乘服務，敬請見諒。",
+    "EN": "★Please make sure to inform us of your pregnancy when making a reservation. A consent form is required regardless of the number of weeks of pregnancy. Please note that there are no medical staff (doctors or nurses) on board, and medical equipment and supplies are limited.\n\nDue to possible ship movement caused by weather and the risk of unexpected incidents during long voyages, boarding may be restricted if your safety cannot be assured.\n\nPregnancy under 32 weeks: Unless your doctor advises against sea or overseas travel, you may board like regular passengers. Please bring a medical certificate and submit it together with the consent form at check-in on the day of departure.\n\nPregnancy 32 weeks or more: For the safety of both the expectant mother and the baby, boarding is not permitted."
+  },
+  "url": "https://www.koreaferry.com/user_guide/need_help/",
+  "url_title": "<자세히보기>"
 }
+
 
 
 
