@@ -212,7 +212,120 @@
   },
   "url": "https://www.koreaferry.com/facilities/facilities_karaoke/",
   "url_title": "<자세히보기>"
+},
+
+
+
+{
+  "id": "faq_discount_001",
+  "question": {
+    "ko": "할인",
+    "ja": "割引",
+    "zh_tw": "折扣",
+    "en": "Discount"
+  },
+  "aliases": {
+    "ko": ["할인요금", "할인혜택", "운임할인", "요금할인", "할인쿠폰", "승선권할인"],
+    "ja": ["割引料金", "運賃割引", "ディスカウント", "割引クーポン"],
+    "zh_tw": ["折扣優惠", "票價折扣", "優惠券", "船票折扣"],
+    "en": ["discount fare", "discount ticket", "fare discount", "promo code", "coupon"]
+  },
+  "keywords_core": {
+    "ko": ["할인", "요금할인"],
+    "ja": ["割引", "料金割引"],
+    "zh_tw": ["折扣", "優惠"],
+    "en": ["discount", "fare discount"]
+  },
+  "keywords_related": {
+    "ko": ["유아할인", "아동할인", "청소년할인", "소아할인", "학생할인", "장애인할인", "단체할인", "노약자할인", "조기예매", "왕복할인", "경로우대"],
+    "ja": ["幼児割引", "子供割引", "学生割引", "障害者割引", "団体割引", "高齢者優待", "早期予約", "往復割引"],
+    "zh_tw": ["幼兒折扣", "兒童折扣", "學生優惠", "身障折扣", "團體折扣", "敬老優惠", "提早預約", "來回折扣"],
+    "en": ["infant discount", "child discount", "student discount", "disabled discount", "group discount", "senior fare", "early booking", "round-trip discount"]
+  },
+  "answers": {
+    "KO": "★영아(만 2세 미만): 무임\n유아(만 2세 이상 ~ 만 6세 미만), 소아(만 6세 이상 ~ 만 12세 미만): 별도 할인 요금 적용\n학생: 중·고등학생 및 재학 중인 대학생(만 30세 미만) → 20% 할인\n※ 대학생은 유효기간이 명시된 학생증 또는 90일 이내 발급된 재학증명서 필요\n장애인: 20% 할인 (장애인 본인 및 동반 1인까지, 관련 증명서 지참 시)",
+    "JA": "★幼児（2歳未満）：無料\n2歳以上～12歳未満：割引料金が適用されます。\n学生（中高生および30歳未満の大学生）：20％割引\n※大学生は有効期限付きの学生証または90日以内発行の在学証明書をご持参ください。\n障害者：20％割引（障害者手帳または精神障害者保健福祉手帳の提示が必要。同伴者1名にも適用）",
+    "ZH_TW": "★2歲以下幼兒：免費\n2歲以上至12歲以下：適用優惠票價\n學生（國中、高中及30歲以下的大學生）：享有20%折扣\n※大學生需出示有效期限內的學生證或90天內開立的在學證明\n身心障礙者：享有20%折扣（本人與1名同行者適用，需出示相關證明文件）",
+    "EN": "★Infants (under 2 years): Free of charge\nChildren (ages 2 to under 12): Eligible for discounted fare\nStudents (middle/high school students and university students under 30): 20% discount\n※ University students must present a valid student ID or enrollment certificate issued within 90 days\nPassengers with disabilities: 20% discount for the passenger and one accompanying person (with valid disability documentation)"
+  },
+  "url": "https://www.koreaferry.com/user_guide/passenger_fare/",
+  "url_title": "<자세히보기>"
+},
+
+
+{
+  "id": "faq_unaccompanied_minors_001",
+  "question": {
+    "ko": "미성년자",
+    "ja": "未成年者",
+    "zh_tw": "未成年人",
+    "en": "Unaccompanied Minor"
+  },
+  "aliases": {
+    "ko": ["만18세", "청소년", "중학생", "고등학생", "만17세", "미성년자 승선"],
+    "ja": ["18歳未満", "未成年", "中学生", "高校生", "保護者なし"],
+    "zh_tw": ["未滿18歲", "青少年", "中學生", "高中生", "無監護人"],
+    "en": ["under 18", "minor", "teenager", "middle school student", "high school student", "without guardian"]
+  },
+  "keywords_core": {
+    "ko": ["미성년자", "청소년"],
+    "ja": ["未成年", "青少年"],
+    "zh_tw": ["未成年人", "青少年"],
+    "en": ["minor", "unaccompanied minor"]
+  },
+  "keywords_related": {
+    "ko": ["보호자 없이", "청소년 승선", "보호자 동의서", "단독 승선", "승선 동의서"],
+    "ja": ["保護者なし", "同意書", "単独乗船", "未成年の搭乗"],
+    "zh_tw": ["無監護人", "搭船同意書", "單獨搭船", "未成年搭船"],
+    "en": ["without guardian", "parental consent", "boarding alone", "minor boarding form"]
+  },
+  "answers": {
+    "KO": "★중학생 이상의 청소년이 보호자 없이 단독으로 승선하는 경우, 보호자의 동의서가 필요합니다.\n※ 초등학생 이하 어린이는 보호자의 동의서가 있어도 단독 승선이 불가능합니다.\n[안내] 미성년자 승선 동의서를 작성하여 승선 당일 제출해 주시기 바랍니다.",
+    "JA": "★中学生以上の未成年者が保護者なしで単独乗船する場合、保護者の同意書が必要です。\n※ 小学生以下のお子様は、同意書があっても単独乗船できません。\n【ご案内】未成年者乗船同意書を記入の上、当日ご提出ください。",
+    "ZH_TW": "★中學生以上的未成年人若無監護人陪同搭船，需提交監護人同意書。\n※ 小學生以下的兒童即使有同意書也無法單獨搭船。\n【提醒】請於搭船當日提交填寫完整的未成年人搭船同意書。",
+    "EN": "★Minors in middle school or older must present a parental consent form if boarding without a guardian.\n※ Children in elementary school or younger are not allowed to travel alone, even with consent.\n[Note] Please submit the completed consent form on the day of boarding."
+  },
+  "url": "https://www.koreaferry.com/user_guide/need_help/",
+  "url_title": "<자세히보기>"
+},
+
+
+{
+  "id": "faq_wheelchair_customers_001",
+  "question": {
+    "ko": "휠체어",
+    "ja": "車椅子",
+    "zh_tw": "輪椅",
+    "en": "Wheelchair"
+  },
+  "aliases": {
+    "ko": ["휠체어이용", "휠체어대여", "장애인", "보행보조기구"],
+    "ja": ["車椅子", "車いす", "障がい者サポート"],
+    "zh_tw": ["輪椅", "行動輔具", "身障者服務"],
+    "en": ["wheelchair", "mobility aid", "disabled support"]
+  },
+  "keywords_core": {
+    "ko": ["휠체어", "장애인"],
+    "ja": ["車椅子", "障がい者"],
+    "zh_tw": ["輪椅", "身障"],
+    "en": ["wheelchair", "disabled"]
+  },
+  "keywords_related": {
+    "ko": ["휠체어대여", "휠체어수송", "휠체어수속", "휠체어지원", "휠체어이용가능", "이동보조기구"],
+    "ja": ["貸出", "補助", "乗船サポート", "移動補助具"],
+    "zh_tw": ["租借", "支援", "登船協助", "行動輔助器具"],
+    "en": ["rental", "assistance", "boarding support", "mobility device"]
+  },
+  "answers": {
+    "KO": "★보행이 불편하신 고객님께는 출국 수속 시까지 무료로 휠체어를 대여해드리고 있으며, 선내에도 대여용 휠체어가 준비되어 있습니다. (단, 터미널 외부에서의 개인 용무 사용은 불가합니다)\n휠체어 수량이 한정되어 있으므로 사전 예약하신 고객님께 우선 제공됩니다.",
+    "JA": "★歩行に不安のあるお客様には、出国手続き時まで無料で車椅子を貸し出しております。船内にも貸出用車椅子をご用意しております。（※ターミナル外での私的利用はできません）\n台数に限りがあるため、事前予約のお客様を優先いたします。",
+    "ZH_TW": "★對於行動不便的旅客，我們提供在出國手續前可免費使用的輪椅，船上亦備有輪椅可供借用。（※不得在航站樓外進行私人用途）\n由於輪椅數量有限，將優先提供給事先預約的旅客。",
+    "EN": "★For passengers with mobility difficulties, complimentary wheelchair rental is available up to the departure check-in area, and additional wheelchairs are available on board. (Note: personal use outside the terminal is not permitted.)\nDue to limited availability, advance reservation is recommended."
+  },
+  "url": "https://www.koreaferry.com/user_guide/need_help/",
+  "url_title": "<자세히보기>"
 }
+
 
 
 
