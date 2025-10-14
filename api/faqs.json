@@ -44,7 +44,7 @@
     },
     "aliases": {
       "ko": ["식당", "레스토랑", "중식", "점심", "저녁", "조식", "음식", "뷔페", "비너스", "식권기", "발매기"],
-      "ja": ["船内食", "食事", "朝食", "夕食", "昼食", "レストラン", "ビーナ스"],
+      "ja": ["船内食", "食事", "朝食", "夕食", "昼食", "レストラン", "ビーナス"],
       "zh_tw": ["用餐", "餐飲", "餐廳", "早餐", "午餐", "晚餐", "船上餐廳", "食券", "販賣機"],
       "en": ["meal", "meals", "restaurant", "food", "lunch", "dinner", "breakfast", "meal ticket", "ticket machine"]
     },
@@ -104,270 +104,599 @@
     "url": "https://www.koreaferry.com/facilities/facilities_bath/",
     "url_title": "<자세히보기>"
   },
-{
-  "id": "faq_dutyfree_001",
-  "question": {
-    "ko": "면세점",
-    "ja": "免税店",
-    "zh_tw": "免稅店",
-    "en": "Duty Free Shop"
+  {
+    "id": "faq_dutyfree_001",
+    "question": {
+      "ko": "면세점",
+      "ja": "免税店",
+      "zh_tw": "免稅店",
+      "en": "Duty Free Shop"
+    },
+    "aliases": {
+      "ko": ["면세", "면세점", "술", "양주", "담배", "면세품", "쇼핑"],
+      "ja": ["免税", "免税店", "酒", "洋酒", "タバコ", "免税品", "ショッピング"],
+      "zh_tw": ["免稅", "免稅店", "酒", "洋酒", "香菸", "免稅品", "購物"],
+      "en": ["duty free", "duty free shop", "liquor", "whiskey", "cigarettes", "tax free goods", "shopping"]
+    },
+    "keywords_core": {
+      "ko": ["쿠보다", "히요코", "로이스"],
+      "ja": ["クボタ", "ひよこ", "ロイズ"],
+      "zh_tw": ["久保田", "小雞餅乾", "ROYCE"],
+      "en": ["Kubota", "Hiyoko", "Royce"]
+    },
+    "keywords_related": {
+      "ko": ["컵라면", "라면", "일회용품", "신용카드", "현금", "엔화"],
+      "ja": ["カップラーメン", "ラーメン", "使い捨て用品", "クレジットカード", "現金", "日本円"],
+      "zh_tw": ["杯麵", "拉麵", "一次性用品", "信用卡", "現金", "日圓", "新臺幣", "臺幣", "台幣", "NT$", "台幣元"],
+      "en": ["cup noodles", "ramen", "disposables", "credit card", "cash", "Japanese yen", "Taiwan Dollar", "New Taiwan Dollar"]
+    },
+    "answers": {
+      "KO": "★ 선내 면세점은 3층 편의점과 함께 운영하고 있으며 술, 담배, 기념품 등을 구입하실 수 있습니다.\n[추가안내] 면세품 운영시간은 편의점 이용시간과 다릅니다.",
+      "JA": "★ 船内の免税店は3階のコンビニと併設されており、お酒・タバコ・お土産などをご購入いただけます。\n[補足] 免税品の営業時間はコンビニの営業時間とは異なります。",
+      "ZH_TW": "★ 船上的免稅店與三樓便利店一同營運，可購買酒類、香菸及紀念品等。\n[補充] 免稅品的營業時間與便利店不同。",
+      "EN": "★ The onboard duty free shop operates together with the convenience store on the 3rd floor, offering liquor, cigarettes, and souvenirs.\n[Note] Duty free shop hours differ from the convenience store hours."
+    },
+    "url": "https://www.koreaferry.com/facilities/facilities_duty_free/",
+    "url_title": "<자세히보기>"
   },
-  "aliases": {
-    "ko": ["면세", "면세점", "술", "양주", "담배", "면세품", "쇼핑"],
-    "ja": ["免税", "免税店", "酒", "洋酒", "タバコ", "免税品", "ショッピング"],
-    "zh_tw": ["免稅", "免稅店", "酒", "洋酒", "香菸", "免稅品", "購物"],
-    "en": ["duty free", "duty free shop", "liquor", "whiskey", "cigarettes", "tax free goods", "shopping"]
+  {
+    "id": "faq_convenience_001",
+    "question": {
+      "ko": "편의점",
+      "ja": "コンビニエンスストア",
+      "zh_tw": "便利商店",
+      "en": "Convenience Store"
+    },
+    "aliases": {
+      "ko": ["매점", "구매", "음료", "과자", "라면", "일회용품", "생활용품", "쇼핑"],
+      "ja": ["売店", "コンビニ", "飲み物", "お菓子", "カップラーメン", "日用品"],
+      "zh_tw": ["賣店", "便利店", "飲料", "零食", "泡麵", "生活用品"],
+      "en": ["store", "shop", "snack", "drink", "ramen", "instant noodles", "daily goods"]
+    },
+    "keywords_core": {
+      "ko": ["편의점", "매점"],
+      "ja": ["コンビニ", "売店"],
+      "zh_tw": ["便利商店", "賣店"],
+      "en": ["convenience store", "store"]
+    },
+    "keywords_related": {
+      "ko": ["컵라면", "라면", "음료", "간식", "생활용품", "신용카드", "현금", "엔화"],
+      "ja": ["カップラーメン", "飲み物", "スナック", "日用品", "クレジットカード", "現金", "円"],
+      "zh_tw": ["泡麵", "飲料", "零食", "日用品", "信用卡", "現金", "日圓"],
+      "en": ["ramen", "snack", "drink", "daily goods", "credit card", "cash", "yen"]
+    },
+    "answers": {
+      "KO": "★ 3층 편의점에서는 음료, 과자, 컵라면, 생활용품 등을 구입하실 수 있습니다.\n[추가안내] 운영시간은 선내 공지에 따릅니다.",
+      "JA": "★ 3階のコンビニエンスストアでは、飲み物、お菓子、カップラーメン、日用品などをご購入いただけます。\n[補足] 営業時間は船内の案内に従ってください。",
+      "ZH_TW": "★ 3樓便利商店販售飲料、零食、泡麵及生活用品等。\n[補充] 營業時間依船內公告為準。",
+      "EN": "★ The convenience store on the 3rd floor sells drinks, snacks, instant noodles, and daily goods.\n[Note] Opening hours follow the onboard notice."
+    },
+    "url": "https://www.koreaferry.com/facilities/facilities_convenience/",
+    "url_title": "<자세히보기>"
   },
-  "keywords_core": {
-    "ko": ["쿠보다", "히요코", "로이스"],
-    "ja": ["クボタ", "ひよこ", "ロイズ"],
-    "zh_tw": ["久保田", "小雞餅乾", "ROYCE"],
-    "en": ["Kubota", "Hiyoko", "Royce"]
+  {
+    "id": "faq_karaoke_001",
+    "question": {
+      "ko": "노래방",
+      "ja": "カラオケ",
+      "zh_tw": "卡拉OK",
+      "en": "Karaoke"
+    },
+    "aliases": {
+      "ko": ["가라오케", "노래", "노래연습장", "오락"],
+      "ja": ["カラオケルーム", "歌", "歌唱", "娯楽"],
+      "zh_tw": ["卡拉OK室", "唱歌", "娛樂"],
+      "en": ["karaoke room", "singing", "music", "entertainment"]
+    },
+    "keywords_core": {
+      "ko": ["노래방", "가라오케"],
+      "ja": ["カラオケ", "カラオケルーム"],
+      "zh_tw": ["卡拉OK", "卡拉OK室"],
+      "en": ["karaoke", "karaoke room"]
+    },
+    "keywords_related": {
+      "ko": ["마이크", "음악", "오락", "노래부르기"],
+      "ja": ["マイク", "音楽", "娯楽", "歌う"],
+      "zh_tw": ["麥克風", "音樂", "娛樂", "唱歌"],
+      "en": ["microphone", "music", "song", "entertainment"]
+    },
+    "answers": {
+      "KO": "★ 3층 노래방은 코인식으로 운영되며 최신곡부터 인기곡까지 다양한 노래를 즐기실 수 있습니다.\n[추가안내] 운영시간은 선내 공지에 따릅니다.",
+      "JA": "★ 3階のカラオケルームはコイン式で、最新曲から人気曲まで幅広くお楽しみいただけます。\n[補足] 営業時間は船内の案内に従ってください。",
+      "ZH_TW": "★ 3樓卡拉OK室採投幣式，提供最新及熱門歌曲供乘客歡唱。\n[補充] 營業時間依船內公告為準。",
+      "EN": "★ The karaoke room on the 3rd floor is coin-operated and offers a wide selection of songs, from the latest hits to popular classics.\n[Note] Opening hours follow the onboard notice."
+    },
+    "url": "https://www.koreaferry.com/facilities/facilities_karaoke/",
+    "url_title": "<자세히보기>"
   },
-  "keywords_related": {
-    "ko": ["컵라면", "라면", "일회용품", "신용카드", "현금", "엔화"],
-    "ja": ["カップラーメン", "ラーメン", "使い捨て用品", "クレジットカード", "現金", "日本円"],
-    "zh_tw": ["杯麵", "拉麵", "一次性用品", "信用卡", "現金", "日圓","新臺幣", "臺幣", "台幣", "NT$", "台幣元"],
-    "en": ["cup noodles", "ramen", "disposables", "credit card", "cash", "Japanese yen","Taiwan Dollar","New Taiwan Dollar"]
+  {
+    "id": "faq_discount_001",
+    "question": {
+      "ko": "할인",
+      "ja": "割引",
+      "zh_tw": "折扣",
+      "en": "Discount"
+    },
+    "aliases": {
+      "ko": ["할인요금", "할인혜택", "운임할인", "요금할인", "할인쿠폰", "승선권할인"],
+      "ja": ["割引料金", "運賃割引", "ディスカウント", "割引クーポン"],
+      "zh_tw": ["折扣優惠", "票價折扣", "優惠券", "船票折扣"],
+      "en": ["discount fare", "discount ticket", "fare discount", "promo code", "coupon"]
+    },
+    "keywords_core": {
+      "ko": ["할인", "요금할인"],
+      "ja": ["割引", "料金割引"],
+      "zh_tw": ["折扣", "優惠"],
+      "en": ["discount", "fare discount"]
+    },
+    "keywords_related": {
+      "ko": ["유아할인", "아동할인", "청소년할인", "소아할인", "학생할인", "장애인할인", "단체할인", "노약자할인", "조기예매", "왕복할인", "경로우대"],
+      "ja": ["幼児割引", "子供割引", "学生割引", "障害者割引", "団体割引", "高齢者優待", "早期予約", "往復割引"],
+      "zh_tw": ["幼兒折扣", "兒童折扣", "學生優惠", "身障折扣", "團體折扣", "敬老優惠", "提早預約", "來回折扣"],
+      "en": ["infant discount", "child discount", "student discount", "disabled discount", "group discount", "senior fare", "early booking", "round-trip discount"]
+    },
+    "answers": {
+      "KO": "★영아(만 2세 미만): 무임\n유아(만 2세 이상 ~ 만 6세 미만), 소아(만 6세 이상 ~ 만 12세 미만): 별도 할인 요금 적용\n학생: 중·고등학생 및 재학 중인 대학생(만 30세 미만) → 20% 할인\n※ 대학생은 유효기간이 명시된 학생증 또는 90일 이내 발급된 재학증명서 필요\n장애인: 20% 할인 (장애인 본인 및 동반 1인까지, 관련 증명서 지참 시)",
+      "JA": "★幼児（2歳未満）：無料\n2歳以上～12歳未満：割引料金が適用されます。\n学生（中高生および30歳未満の大学生）：20％割引\n※大学生は有効期限付きの学生証または90日以内発行の在学証明書をご持参ください。\n障害者：20％割引（障害者手帳または精神障害者保健福祉手帳の提示が必要。同伴者1名にも適用）",
+      "ZH_TW": "★2歲以下幼兒：免費\n2歲以上至12歲以下：適用優惠票價\n學生（國中、高中及30歲以下的大學生）：享有20%折扣\n※大學生需出示有效期限內的學生證或90天內開立的在學證明\n身心障礙者：享有20%折扣（本人與1名同行者適用，需出示相關證明文件）",
+      "EN": "★Infants (under 2 years): Free of charge\nChildren (ages 2 to under 12): Eligible for discounted fare\nStudents (middle/high school students and university students under 30): 20% discount\n※ University students must present a valid student ID or enrollment certificate issued within 90 days\nPassengers with disabilities: 20% discount for the passenger and one accompanying person (with valid disability documentation)"
+    },
+    "url": "https://www.koreaferry.com/user_guide/passenger_fare/",
+    "url_title": "<자세히보기>"
   },
-  "answers": {
-    "KO": "★ 선내 면세점은 3층 편의점과 함께 운영하고 있으며 술, 담배, 기념품 등을 구입하실 수 있습니다.\n[추가안내] 면세품 운영시간은 편의점 이용시간과 다릅니다.",
-    "JA": "★ 船内の免税店は3階のコンビニと併設されており、お酒・タバコ・お土産などをご購入いただけます。\n[補足] 免税品の営業時間はコンビニの営業時間とは異なります。",
-    "ZH_TW": "★ 船上的免稅店與三樓便利店一同營運，可購買酒類、香菸及紀念品等。\n[補充] 免稅品的營業時間與便利店不同。",
-    "EN": "★ The onboard duty free shop operates together with the convenience store on the 3rd floor, offering liquor, cigarettes, and souvenirs.\n[Note] Duty free shop hours differ from the convenience store hours."
+  {
+    "id": "faq_unaccompanied_minors_001",
+    "question": {
+      "ko": "미성년자",
+      "ja": "未成年者",
+      "zh_tw": "未成年人",
+      "en": "Unaccompanied Minor"
+    },
+    "aliases": {
+      "ko": ["만18세", "청소년", "중학생", "고등학생", "만17세", "미성년자 승선"],
+      "ja": ["18歳未満", "未成年", "中学生", "高校生", "保護者なし"],
+      "zh_tw": ["未滿18歲", "青少年", "中學生", "高中生", "無監護人"],
+      "en": ["under 18", "minor", "teenager", "middle school student", "high school student", "without guardian"]
+    },
+    "keywords_core": {
+      "ko": ["미성년자", "청소년"],
+      "ja": ["未成年", "青少年"],
+      "zh_tw": ["未成年人", "青少年"],
+      "en": ["minor", "unaccompanied minor"]
+    },
+    "keywords_related": {
+      "ko": ["보호자 없이", "청소년 승선", "보호자 동의서", "단독 승선", "승선 동의서"],
+      "ja": ["保護者なし", "同意書", "単独乗船", "未成年の搭乗"],
+      "zh_tw": ["無監護人", "搭船同意書", "單獨搭船", "未成年搭船"],
+      "en": ["without guardian", "parental consent", "boarding alone", "minor boarding form"]
+    },
+    "answers": {
+      "KO": "★중학생 이상의 청소년이 보호자 없이 단독으로 승선하는 경우, 보호자의 동의서가 필요합니다.\n※ 초등학생 이하 어린이는 보호자의 동의서가 있어도 단독 승선이 불가능합니다.\n[안내] 미성년자 승선 동의서를 작성하여 승선 당일 제출해 주시기 바랍니다.",
+      "JA": "★中学生以上の未成年者が保護者なしで単独乗船する場合、保護者の同意書が必要です。\n※ 小学生以下のお子様は、同意書があっても単独乗船できません。\n【ご案内】未成年者乗船同意書を記入の上、当日ご提出ください。",
+      "ZH_TW": "★中學生以上的未成年人若無監護人陪同搭船，需提交監護人同意書。\n※ 小學生以下的兒童即使有同意書也無法單獨搭船。\n【提醒】請於搭船當日提交填寫完整的未成年人搭船同意書。",
+      "EN": "★Minors in middle school or older must present a parental consent form if boarding without a guardian.\n※ Children in elementary school or younger are not allowed to travel alone, even with consent.\n[Note] Please submit the completed consent form on the day of boarding."
+    },
+    "url": "https://www.koreaferry.com/user_guide/need_help/",
+    "url_title": "<자세히보기>"
   },
-  "url": "https://www.koreaferry.com/facilities/facilities_duty_free/",
-  "url_title": "<자세히보기>"
-},
-
-
-{
-  "id": "faq_convenience_001",
-  "question": {
-    "ko": "편의점",
-    "ja": "コンビニエンスストア",
-    "zh_tw": "便利商店",
-    "en": "Convenience Store"
+  {
+    "id": "faq_wheelchair_customers_001",
+    "question": {
+      "ko": "휠체어",
+      "ja": "車椅子",
+      "zh_tw": "輪椅",
+      "en": "Wheelchair"
+    },
+    "aliases": {
+      "ko": ["휠체어이용", "휠체어대여", "장애인", "보행보조기구"],
+      "ja": ["車椅子", "車いす", "障がい者サポート"],
+      "zh_tw": ["輪椅", "行動輔具", "身障者服務"],
+      "en": ["wheelchair", "mobility aid", "disabled support"]
+    },
+    "keywords_core": {
+      "ko": ["휠체어", "장애인"],
+      "ja": ["車椅子", "障がい者"],
+      "zh_tw": ["輪椅", "身障"],
+      "en": ["wheelchair", "disabled"]
+    },
+    "keywords_related": {
+      "ko": ["휠체어대여", "휠체어수송", "휠체어수속", "휠체어지원", "휠체어이용가능", "이동보조기구"],
+      "ja": ["貸出", "補助", "乗船サポート", "移動補助具"],
+      "zh_tw": ["租借", "支援", "登船協助", "行動輔助器具"],
+      "en": ["rental", "assistance", "boarding support", "mobility device"]
+    },
+    "answers": {
+      "KO": "★보행이 불편하신 고객님께는 출국 수속 시까지 무료로 휠체어를 대여해드리고 있으며, 선내에도 대여용 휠체어가 준비되어 있습니다. (단, 터미널 외부에서의 개인 용무 사용은 불가합니다)\n휠체어 수량이 한정되어 있으므로 사전 예약하신 고객님께 우선 제공됩니다.",
+      "JA": "★歩行に不安のあるお客様には、出国手続き時まで無料で車椅子を貸し出しております。船内にも貸出用車椅子をご用意しております。（※ターミナル外での私的利用はできません）\n台数に限りがあるため、事前予約のお客様を優先いたします。",
+      "ZH_TW": "★對於行動不便的旅客，我們提供在出國手續前可免費使用的輪椅，船上亦備有輪椅可供借用。（※不得在航站樓外進行私人用途）\n由於輪椅數量有限，將優先提供給事先預約的旅客。",
+      "EN": "★For passengers with mobility difficulties, complimentary wheelchair rental is available up to the departure check-in area, and additional wheelchairs are available on board. (Note: personal use outside the terminal is not permitted.)\nDue to limited availability, advance reservation is recommended."
+    },
+    "url": "https://www.koreaferry.com/user_guide/need_help/",
+    "url_title": "<자세히보기>"
   },
-  "aliases": {
-    "ko": ["매점", "구매", "음료", "과자", "라면", "일회용품", "생활용품", "쇼핑"],
-    "ja": ["売店", "コンビニ", "飲み物", "お菓子", "カップラーメン", "日用品"],
-    "zh_tw": ["賣店", "便利店", "飲料", "零食", "泡麵", "生活用品"],
-    "en": ["store", "shop", "snack", "drink", "ramen", "instant noodles", "daily goods"]
+  {
+    "id": "faq_pregnant_customers_001",
+    "question": {
+      "ko": "임산부",
+      "ja": "妊婦",
+      "zh_tw": "孕婦",
+      "en": "Pregnant passengers"
+    },
+    "aliases": {
+      "ko": ["임신", "임신부", "임신중", "임산부탑승"],
+      "ja": ["妊婦", "妊娠中", "妊娠"],
+      "zh_tw": ["孕婦", "懷孕", "孕期旅客"],
+      "en": ["pregnant", "pregnancy", "pregnant woman", "expectant mother"]
+    },
+    "keywords_core": {
+      "ko": ["임산부", "임신부"],
+      "ja": ["妊婦", "妊娠"],
+      "zh_tw": ["孕婦", "懷孕"],
+      "en": ["pregnant", "pregnancy"]
+    },
+    "keywords_related": {
+      "ko": ["임신부승선", "임신몇주", "임산부승선", "임산부탑승", "임산부동의서"],
+      "ja": ["妊婦乗船", "妊娠週数", "同意書", "乗船制限"],
+      "zh_tw": ["孕婦登船", "懷孕週數", "同意書", "登船限制"],
+      "en": ["pregnant boarding", "pregnancy weeks", "consent form", "boarding restriction"]
+    },
+    "answers": {
+      "KO": "★예약 시 반드시 임신 사실을 알려주셔야 하며, 임신 주수와 관계없이 동의서 작성이 필요합니다. 또한 당사 선박에는 의료진(의사·간호사)이 승선하고 있지 않으며, 충분한 의료 설비와 의약품이 구비되어 있지 않습니다.\n\n기상에 따른 선체 동요 및 장시간 운항 중 예기치 못한 상황이 발생할 수 있으므로, 고객님의 안전을 보장할 수 없다고 판단되는 경우 승선이 제한될 수 있습니다.\n\n임신 32주 미만: 의사로부터 선박 및 해외 여행 금지를 권고받은 경우를 제외하고 일반인과 동일하게 여행이 가능합니다. 단, 의사의 소견서를 발급받아 서약서와 함께 승선 당일 카운터에 제출해 주시기 바랍니다.\n\n임신 32주 이상: 태아와 임산부 본인의 안전을 위해 당사 선박 이용은 불가하오니 양해 부탁드립니다.",
+      "JA": "★ご予約の際、必ず妊娠中であることをお知らせください。妊娠週数に関わらず同意書のご提出が必要です。また、当社の船舶には医師や看護師は乗船しておらず、十分な医療設備や医薬品も備えておりません。\n\n天候による揺れや長時間航行中に予期せぬ事態が発生する可能性があるため、安全を確保できないと判断された場合はご乗船をお断りする場合があります。\n\n妊娠32週未満：医師から乗船や海外旅行の制限を受けていない限り、一般のお客様と同様にご利用いただけます。医師の診断書を取得し、誓約書とともに当日カウンターへご提出ください。\n\n妊娠32週以上：お客様と胎児の安全のため、ご乗船いただけませんのでご了承ください。",
+      "ZH_TW": "★預訂時請務必告知懷孕狀況，無論孕期週數皆需填寫同意書。此外，本公司船舶上無醫療人員（醫師、護理師），亦無完善醫療設備及藥品。\n\n由於天候造成的船體搖晃與長時間航行可能引發突發狀況，若判斷無法確保安全，可能會限制登船。\n\n懷孕未滿32週：除非醫師建議不得搭船或出國，否則可與一般旅客相同登船。請攜帶醫師診斷證明，並於登船當日與切結書一併提交至櫃檯。\n\n懷孕32週以上：為了孕婦與胎兒的安全，恕無法提供搭乘服務，敬請見諒。",
+      "EN": "★Please make sure to inform us of your pregnancy when making a reservation. A consent form is required regardless of the number of weeks of pregnancy. Please note that there are no medical staff (doctors or nurses) on board, and medical equipment and supplies are limited.\n\nDue to possible ship movement caused by weather and the risk of unexpected incidents during long voyages, boarding may be restricted if your safety cannot be assured.\n\nPregnancy under 32 weeks: Unless your doctor advises against sea or overseas travel, you may board like regular passengers. Please bring a medical certificate and submit it together with the consent form at check-in on the day of departure.\n\nPregnancy 32 weeks or more: For the safety of both the expectant mother and the baby, boarding is not permitted."
+    },
+    "url": "https://www.koreaferry.com/user_guide/need_help/",
+    "url_title": "<자세히보기>"
   },
-  "keywords_core": {
-    "ko": ["편의점", "매점"],
-    "ja": ["コンビニ", "売店"],
-    "zh_tw": ["便利商店", "賣店"],
-    "en": ["convenience store", "store"]
+  {
+    "id": "faq_information_desk_001",
+    "question": {
+      "ko": "안내데스크",
+      "ja": "案内デスク",
+      "zh_tw": "服務台",
+      "en": "Information Desk"
+    },
+    "aliases": {
+      "ko": ["기타시설", "안내센터", "종합안내", "문의처", "리셉션", "고객센터", "인포메이션"],
+      "ja": ["案内デスク", "インフォメーション", "総合案内", "受付", "カスタマーサービス"],
+      "zh_tw": ["服務台", "資訊櫃檯", "諮詢中心", "客服中心", "櫃檯"],
+      "en": ["information desk", "info desk", "reception", "customer service", "help desk"]
+    },
+    "keywords_core": {
+      "ko": ["안내데스크", "안내센터"],
+      "ja": ["案内デスク", "インフォメーション"],
+      "zh_tw": ["服務台", "資訊櫃檯"],
+      "en": ["information desk", "reception"]
+    },
+    "keywords_related": {
+      "ko": ["위치", "운영시간", "분실물", "문의", "비상연락"],
+      "ja": ["場所", "営業時間", "遺失物", "問い合わせ", "緊急連絡"],
+      "zh_tw": ["位置", "營業時間", "失物招領", "詢問", "緊急聯絡"],
+      "en": ["location", "hours", "lost and found", "inquiry", "emergency contact"]
+    },
+    "answers": {
+      "KO": "★ 안내데스크는 3층에 위치합니다. 운영시간은 19:00–22:30입니다.",
+      "JA": "★ 案内デスクは3階にあります。営業時間は19:00〜22:30です。",
+      "ZH_TW": "★ 服務台位於3樓。營業時間為19:00–22:30。",
+      "EN": "★ The information desk is located on Deck 3. Hours: 19:00–22:30."
+    },
+    "url": "https://www.koreaferry.com/facilities/facilities_etc/",
+    "url_title": "<자세히보기>"
   },
-  "keywords_related": {
-    "ko": ["컵라면", "라면", "음료", "간식", "생활용품", "신용카드", "현금", "엔화"],
-    "ja": ["カップラーメン", "飲み物", "スナック", "日用品", "クレジットカード", "現金", "円"],
-    "zh_tw": ["泡麵", "飲料", "零食", "日用品", "信用卡", "現金", "日圓"],
-    "en": ["ramen", "snack", "drink", "daily goods", "credit card", "cash", "yen"]
+  {
+    "id": "faq_vending_machine_001",
+    "question": {
+      "ko": "자판기",
+      "ja": "自動販売機",
+      "zh_tw": "自動販賣機",
+      "en": "Vending Machines"
+    },
+    "aliases": {
+      "ko": ["기타시설", "음료자판기", "스낵자판기", "술자판기", "자동판매기", "음료기"],
+      "ja": ["自動販売機", "飲料自販機", "スナック自販機", "酒類自販機"],
+      "zh_tw": ["自動販賣機", "飲料機", "點心販賣機", "酒類販賣機"],
+      "en": ["vending machine", "beverage vending machine", "snack vending machine", "alcohol vending machine"]
+    },
+    "keywords_core": {
+      "ko": ["자판기", "자동판매기"],
+      "ja": ["自動販売機"],
+      "zh_tw": ["自動販賣機"],
+      "en": ["vending machine"]
+    },
+    "keywords_related": {
+      "ko": ["위치", "음료", "스낵", "라면", "결제", "운영시간", "주류"],
+      "ja": ["場所", "飲料", "スナック", "ラーメン", "決済", "営業時間", "酒類"],
+      "zh_tw": ["位置", "飲料", "點心", "泡麵", "付款", "營業時間", "酒類"],
+      "en": ["location", "beverages", "snacks", "ramen", "payment", "hours", "alcohol"]
+    },
+    "answers": {
+      "KO": "★ 각종 자판기는 각 층에 배치되어 있습니다. 맥주(주류) 및 라면 자판기는 3층에 있습니다.\n[추가 안내] 요금 결제는 엔화로 사용 가능합니다.",
+      "JA": "★ 各種自動販売機は各フロアに設置しています。ビール（酒類）およびラーメンの自販機は3階にあります。\n【追記】お支払いは日本円でご利用いただけます。",
+      "ZH_TW": "★ 各類自動販賣機設置於各樓層。啤酒（酒類）與泡麵販賣機位於3樓。\n【補充】費用可使用日圓支付。",
+      "EN": "★ Vending machines are available on all decks. Beer (alcohol) and ramen machines are located on Deck 3.\n[Note] Payment in Japanese yen is accepted."
+    },
+    "url": "https://www.koreaferry.com/facilities/facilities_etc/",
+    "url_title": "<자세히보기>"
   },
-  "answers": {
-    "KO": "★ 3층 편의점에서는 음료, 과자, 컵라면, 생활용품 등을 구입하실 수 있습니다.\n[추가안내] 운영시간은 선내 공지에 따릅니다.",
-    "JA": "★ 3階のコンビニエンスストアでは、飲み物、お菓子、カップラーメン、日用品などをご購入いただけます。\n[補足] 営業時間は船内の案内に従ってください。",
-    "ZH_TW": "★ 3樓便利商店販售飲料、零食、泡麵及生活用品等。\n[補充] 營業時間依船內公告為準。",
-    "EN": "★ The convenience store on the 3rd floor sells drinks, snacks, instant noodles, and daily goods.\n[Note] Opening hours follow the onboard notice."
+  {
+    "id": "faq_coin_locker_001",
+    "question": {
+      "ko": "코인락커",
+      "ja": "コインロッカー",
+      "zh_tw": "投幣式置物櫃",
+      "en": "Coin Lockers"
+    },
+    "aliases": {
+      "ko": ["보관함", "물품보관함", "짐보관함", "코인보관함", "자동보관함"],
+      "ja": ["コインロッカー", "荷物保管", "ロッカー"],
+      "zh_tw": ["置物櫃", "投幣櫃", "行李寄放櫃"],
+      "en": ["coin locker", "baggage locker", "storage locker"]
+    },
+    "keywords_core": {
+      "ko": ["코인락커", "보관함"],
+      "ja": ["コインロッカー", "ロッカー"],
+      "zh_tw": ["投幣式置物櫃", "置物櫃"],
+      "en": ["coin locker", "locker"]
+    },
+    "keywords_related": {
+      "ko": ["위치", "이용요금", "사용방법", "보관시간", "분실", "환불"],
+      "ja": ["場所", "利用料金", "使い方", "保管時間", "紛失"],
+      "zh_tw": ["位置", "費用", "使用方式", "保管時間", "遺失"],
+      "en": ["location", "fee", "how to use", "storage time", "lost items"]
+    },
+    "answers": {
+      "KO": "★ 코인락커는 각 층에 배치되어 있습니다.\n[안내] 일부 락커는 유료이며, 기기 표시 요금(엔화 기준)에 따라 이용 가능합니다.",
+      "JA": "★ コインロッカーは各フロアに設置されています。\n【案内】一部は有料で、機器表示の料金（日本円）にてご利用いただけます。",
+      "ZH_TW": "★ 投幣式置物櫃設置於各樓層。\n【說明】部分櫃體需付費，請依機台標示之日圓金額使用。",
+      "EN": "★ Coin lockers are available on all decks.\n[Note] Some lockers are paid; please follow the fee shown on the machine (in JPY)."
+    },
+    "url": "https://www.koreaferry.com/facilities/facilities_etc/",
+    "url_title": "<자세히보기>"
   },
-  "url": "https://www.koreaferry.com/facilities/facilities_convenience/",
-  "url_title": "<자세히보기>"
-},
-
-
-{
-  "id": "faq_karaoke_001",
-  "question": {
-    "ko": "노래방",
-    "ja": "カラオケ",
-    "zh_tw": "卡拉OK",
-    "en": "Karaoke"
+  {
+    "id": "faq_arcade_001",
+    "question": {
+      "ko": "오락실",
+      "ja": "ゲームコーナー",
+      "zh_tw": "遊戲室",
+      "en": "Game Room / Arcade"
+    },
+    "aliases": {
+      "ko": ["게임존", "놀이시설", "오락공간", "엔터테인먼트룸"],
+      "ja": ["ゲームセンター", "アーケード", "エンタメルーム"],
+      "zh_tw": ["遊戲區", "電動玩具室", "娛樂室"],
+      "en": ["arcade", "game zone", "entertainment room"]
+    },
+    "keywords_core": {
+      "ko": ["오락실", "게임"],
+      "ja": ["ゲームコーナー", "ゲーム"],
+      "zh_tw": ["遊戲室", "遊戲"],
+      "en": ["arcade", "games"]
+    },
+    "keywords_related": {
+      "ko": ["코인", "이용시간", "위치", "운영시간", "엔터테인먼트", "엔화", "인형뽑기", "슈팅게임", "가챠"],
+      "ja": ["コイン", "利用時間", "場所", "営業時間", "エンタメ", "日本円", "クレーンゲーム", "シューティング", "ガチャ"],
+      "zh_tw": ["投幣", "使用時間", "位置", "營業時間", "娛樂", "日圓", "夾娃娃機", "射擊遊戲", "扭蛋"],
+      "en": ["coins", "hours", "location", "entertainment", "JPY cash", "claw machine", "shooting game", "gacha"]
+    },
+    "answers": {
+      "KO": "★ 코인식 게임기와 간단한 놀이시설을 이용하실 수 있습니다. 운영시간은 24시간입니다.\n[안내] 기기 이용은 유료이며, 엔화 현금 전용입니다.",
+      "JA": "★ コイン式ゲーム機や簡易アトラクションをご利用いただけます。営業時間は24時間です。\n【案内】ご利用は有料で、日本円の現金のみ対応しています。",
+      "ZH_TW": "★ 提供投幣式遊戲機與簡易娛樂設施，24小時開放。\n【說明】使用需付費，僅限日圓現金。",
+      "EN": "★ Coin-operated arcade machines and simple attractions are available 24 hours.\n[Note] Usage is paid and cash in Japanese yen only."
+    },
+    "url": "https://www.koreaferry.com/facilities/facilities_gameroom/",
+    "url_title": "<자세히보기>"
   },
-  "aliases": {
-    "ko": ["가라오케", "노래", "노래연습장", "오락"],
-    "ja": ["カラオケルーム", "歌", "歌唱", "娯楽"],
-    "zh_tw": ["卡拉OK室", "唱歌", "娛樂"],
-    "en": ["karaoke room", "singing", "music", "entertainment"]
+  {
+    "id": "faq_lounge_001",
+    "question": {
+      "ko": "휴게실",
+      "ja": "休憩室（ラウンジ）",
+      "zh_tw": "休息室（Lounge）",
+      "en": "Lounge"
+    },
+    "aliases": {
+      "ko": ["휴게공간", "대기실", "쉼터", "라운지", "휴식공간"],
+      "ja": ["休憩室", "ラウンジ", "待合室"],
+      "zh_tw": ["休息區", "休憩室", "等候室", "貴賓室"],
+      "en": ["rest area", "waiting room", "lounge"]
+    },
+    "keywords_core": {
+      "ko": ["휴게실", "라운지"],
+      "ja": ["休憩室", "ラウンジ"],
+      "zh_tw": ["休息室", "Lounge"],
+      "en": ["lounge", "rest area"]
+    },
+    "keywords_related": {
+      "ko": ["위치", "운영시간", "편의시설", "음료", "좌석", "휴식", "쇼파", "전망라운지"],
+      "ja": ["場所", "営業時間", "設備", "飲料", "座席", "休憩", "ソファ", "展望"],
+      "zh_tw": ["位置", "營業時間", "設施", "飲品", "座位", "休憩", "沙發", "景觀"],
+      "en": ["location", "hours", "amenities", "beverages", "seats", "sofa", "view"]
+    },
+    "answers": {
+      "KO": "★ 선내 휴게실은 4층에 위치합니다. 운영시간은 24시간입니다.\n[안내] 이용요금은 무료입니다.",
+      "JA": "★ 船内の休憩室（ラウンジ）は4階にあります。営業時間は24時間です。\n【案内】ご利用は無料です。",
+      "ZH_TW": "★ 船上休息室位於4樓，24小時開放。\n【說明】免費使用。",
+      "EN": "★ The lounge is located on Deck 4 and is open 24 hours.\n[Note] Use is free of charge."
+    },
+    "url": "https://www.koreaferry.com/facilities/facilities_lounge/",
+    "url_title": "<자세히보기>"
   },
-  "keywords_core": {
-    "ko": ["노래방", "가라오케"],
-    "ja": ["カラオケ", "カラオケルーム"],
-    "zh_tw": ["卡拉OK", "卡拉OK室"],
-    "en": ["karaoke", "karaoke room"]
+  {
+    "id": "faq_fuel_surcharge_001",
+    "question": {
+      "ko": "유류세",
+      "ja": "燃油サーチャージ",
+      "zh_tw": "燃油附加費",
+      "en": "Fuel Surcharge"
+    },
+    "aliases": {
+      "ko": ["유류할증료", "유류비", "연료비", "유류요금"],
+      "ja": ["燃油サーチャージ", "燃料付加料金", "燃料費"],
+      "zh_tw": ["燃油附加費", "燃料費", "油料費"],
+      "en": ["fuel surcharge", "fuel fee", "fuel cost"]
+    },
+    "keywords_core": {
+      "ko": ["유류세", "유류할증료"],
+      "ja": ["燃油サーチャージ"],
+      "zh_tw": ["燃油附加費"],
+      "en": ["fuel surcharge"]
+    },
+    "keywords_related": {
+      "ko": ["운임", "요금", "변동", "부과", "환불", "유가변동", "공지"],
+      "ja": ["運賃", "料金", "変動", "徴収", "払戻", "原油価格", "お知らせ"],
+      "zh_tw": ["票價", "費用", "變動", "收取", "退費", "油價", "公告"],
+      "en": ["fare", "fee", "change", "impose", "refund", "oil price", "notice"]
+    },
+    "answers": {
+      "KO": "★ 유류할증료는 유가 변동에 따라 변경될 수 있으며, 변경 시 홈페이지 공지사항으로 안내됩니다.\n[추가 안내] 하카타 출발편의 유류할증료·터미널 이용료·출국세는 예약 후 운임 결제 시 함께 원화로 결제하셔야 합니다.",
+      "JA": "★ 燃油サーチャージは原油価格の変動により変更となる場合があります。変更時は当社ホームページのお知らせにてご案内します。\n【追記】博多発便の燃油サーチャージ・ターミナル利用料・出国税は、予約後の運賃決済時に韓国ウォンで一括お支払いとなります。",
+      "ZH_TW": "★ 燃油附加費會因油價波動而調整；如有變更，將於官網公告。\n【補充】博多出發航班之燃油附加費、航站使用費與出國稅，需於訂位後支付票款時一併以韓圜結算。",
+      "EN": "★ The fuel surcharge may change depending on oil prices. Any changes will be announced on our website.\n[Note] For departures from Hakata, the fuel surcharge, terminal fee, and departure tax are collected together in KRW at the time of fare payment."
+    },
+    "url": "https://www.koreaferry.com/user_guide/passenger_fare/",
+    "url_title": "<자세히보기>"
   },
-  "keywords_related": {
-    "ko": ["마이크", "음악", "오락", "노래부르기"],
-    "ja": ["マイク", "音楽", "娯楽", "歌う"],
-    "zh_tw": ["麥克風", "音樂", "娛樂", "唱歌"],
-    "en": ["microphone", "music", "song", "entertainment"]
+  {
+    "id": "faq_cancellation_fee_001",
+    "question": {
+      "ko": "취소수수료",
+      "ja": "取消手数料",
+      "zh_tw": "取消手續費",
+      "en": "Cancellation Fees"
+    },
+    "aliases": {
+      "ko": ["환불수수료", "예약취소", "취소요금", "환불"],
+      "ja": ["払戻手数料", "予約取消", "取消料", "払戻"],
+      "zh_tw": ["退票手續費", "取消預訂", "退費", "取消費用"],
+      "en": ["refund fee", "booking cancellation", "refund", "cancellation charges"]
+    },
+    "keywords_core": {
+      "ko": ["취소수수료", "환불수수료"],
+      "ja": ["取消手数料", "払戻手数料"],
+      "zh_tw": ["取消手續費", "退費手續費"],
+      "en": ["cancellation fee", "refund fee"]
+    },
+    "keywords_related": {
+      "ko": ["환불", "취소", "예약", "시간기준", "부분환불", "취소날짜", "취소가능일"],
+      "ja": ["払戻", "キャンセル", "予約", "期限", "一部払戻", "取消日", "受付期限"],
+      "zh_tw": ["退費", "取消", "預訂", "期限", "部分退費", "取消日期", "受理期限"],
+      "en": ["refund", "cancel", "booking", "deadline", "partial refund", "cutoff date"]
+    },
+    "answers": {
+      "KO": "★ 결제 후 취소 시, 남은 기간과 관계없이 취소수수료가 부과되며 수수료 공제 후 환불됩니다. 환불은 티켓을 발행한 지점에서만 가능하며, 적용 기준일은 티켓 발행일입니다.\n[추가 안내] 주말·공휴일 승선편의 경우, 평일 기준 ‘하루 전’까지만 취소 접수 가능합니다.",
+      "JA": "★ 決済後に取消される場合、残り日数に関わらず取消手数料が発生し、手数料差引後に払戻となります。払戻は発券した窓口でのみ可能で、適用基準日は発券日です。\n【追記】週末・祝日のご乗船分は、平日基準で「前日」までのみ取消受付が可能です。",
+      "ZH_TW": "★ 付款後取消，無論距出發剩餘時間多少，皆需收取取消手續費；將於扣除手續費後退費。退費僅限原開票窗口辦理，適用基準日以開票日為準。\n【補充】週末／國定假日出航之班次，僅受理於平日基準之「前一日」前取消。",
+      "EN": "★ After payment, a cancellation fee applies regardless of the remaining time before departure; refunds are issued minus the fee. Refunds can only be processed at the issuing office, and the applicable reference date is the ticket issuance date.\n[Note] For sailings on weekends or public holidays, cancellations are accepted only until the business day before (based on weekdays)."
+    },
+    "url": "https://www.koreaferry.com/user_guide/passenger_fare/",
+    "url_title": "<자세히보기>"
   },
-  "answers": {
-    "KO": "★ 3층 노래방은 코인식으로 운영되며 최신곡부터 인기곡까지 다양한 노래를 즐기실 수 있습니다.\n[추가안내] 운영시간은 선내 공지에 따릅니다.",
-    "JA": "★ 3階のカラオケルームはコイン式で、最新曲から人気曲まで幅広くお楽しみいただけます。\n[補足] 営業時間は船内の案内に従ってください。",
-    "ZH_TW": "★ 3樓卡拉OK室採投幣式，提供最新及熱門歌曲供乘客歡唱。\n[補充] 營業時間依船內公告為準。",
-    "EN": "★ The karaoke room on the 3rd floor is coin-operated and offers a wide selection of songs, from the latest hits to popular classics.\n[Note] Opening hours follow the onboard notice."
+  {
+    "id": "faq_royal_suite_001",
+    "question": {
+      "ko": "로얄스위트",
+      "ja": "ロイヤルスイート",
+      "zh_tw": "皇家套房",
+      "en": "Royal Suite"
+    },
+    "aliases": {
+      "ko": ["특별실", "스위트룸", "로얄 스위트", "스위트", "최고등급 선실"],
+      "ja": ["ロイヤルスイート", "スイート", "特別室", "最上級客室"],
+      "zh_tw": ["皇家套房", "套房", "特別客房", "頂級艙房"],
+      "en": ["royal suite", "suite", "special cabin", "premium cabin", "top tier cabin"]
+    },
+    "keywords_core": {
+      "ko": ["로얄스위트", "스위트룸", "특별실"],
+      "ja": ["ロイヤルスイート", "スイート"],
+      "zh_tw": ["皇家套房", "套房"],
+      "en": ["royal suite", "suite"]
+    },
+    "keywords_related": {
+      "ko": ["개인 발코니", "파우더룸", "욕조", "샤워부스", "개별 화장실", "냉장고", "TV", "가운", "세면도구", "헤어드라이어", "티포트", "다기 세트", "중앙 냉난방", "110V 어댑터", "전객실 금연", "뉴 카멜리아", "2인실", "3인 이용"],
+      "ja": ["専用バルコニー", "パウダールーム", "バスタブ", "シャワーブース", "トイレ", "冷蔵庫", "テレビ", "ガウン", "アメニティ", "ヘアドライヤー", "ティーポット", "茶器セット", "集中空調", "110V変換アダプター", "全室禁煙", "ニューカメリア", "2名利用", "3名利用"],
+      "zh_tw": ["私人陽台", "梳妝間", "浴缸", "淋浴間", "獨立洗手間", "冰箱", "電視", "浴袍", "盥洗用品", "吹風機", "熱水壺", "茶具組", "中央空調", "110V轉接頭", "全室禁菸", "New Camellia", "2人入住", "可3人使用"],
+      "en": ["private balcony", "powder room", "bathtub", "shower booth", "toilet", "refrigerator", "TV", "robe", "toiletries", "hair dryer", "electric kettle", "tea set", "central HVAC", "110V adapter", "non-smoking", "New Camellia", "2 persons", " up to 3 guests"]
+    },
+    "answers": {
+      "KO": "★ New Camellia호의 로얄스위트 캐빈은 호텔의 스위트룸과 같은 편안함과 세련된 인테리어로 ‘쾌적하고 우아한 초특급 크루즈선’의 분위기를 느끼실 수 있습니다.\n\n★ 객실정원 2~3명 / 보유객실 2실\n★ 개인 발코니, 파우더룸, 세면대, 욕조, 샤워부스, 화장실, TV, 냉장고\n★ 냉난방 시스템(중앙식)\n★ 가운, 세면도구 세트(샴푸, 린스, 치약, 칫솔, 수건, 객실용 슬리퍼) 제공, 헤어드라이어\n★ 티포트, 다기 세트\n★ 선내 전압 110V(110V 변환 어댑터 필요)\n★ 전 객실 금연",
+      "JA": "★ ニューカメリア号のロイヤルスイートは、ホテルのスイート同等の快適さと上質なインテリアで、上品かつラグジュアリーなクルーズ体験をご提供します。\n\n• 定員：2～3名／保有客室：2室\n• 主な設備：専用バルコニー、パウダールーム、洗面台、バスタブ、シャワーブース、トイレ、TV、冷蔵庫\n• アメニティ：ガウン、アメニティセット（シャンプー・リンス・歯磨き粉・歯ブラシ・タオル・客室用スリッパ）、ヘアドライヤー、ティーポット、茶器セット\n• 空調：集中空調システム\n• 電圧：船内110V（110V変換アダプターが必要）\n• 全室禁煙",
+      "ZH_TW": "★ New Camellia 號的皇家套房以飯店級套房的舒適度與質感裝潢，帶來優雅奢華的郵輪體驗。\n\n• 入住人數：2～3人／客房數量：共2間\n• 主要設施：私人陽台、梳妝間、洗手台、浴缸、淋浴間、獨立洗手間、電視、冰箱\n• 房內備品：浴袍、盥洗用品組（洗髮精、潤髮乳、牙膏、牙刷、毛巾、室內拖鞋）、吹風機、熱水壺、茶具組\n• 空調：中央空調系統\n• 電壓：船內 110V（需自備110V轉接頭）\n• 全室禁菸",
+      "EN": "★ The Royal Suite on the New Camellia offers hotel-grade comfort and refined interiors for an elegant, premium-cruise ambiance.\n\n• Occupancy: 2–3 guests / Total inventory: 2 suites\n• Key features: private balcony, powder room, washbasin, bathtub, shower booth, toilet, TV, refrigerator\n• Amenities: robes, toiletry set (shampoo, conditioner, toothpaste, toothbrush, towels, in-room slippers), hair dryer, electric kettle, tea set\n• Climate: central HVAC\n• Power: 110V on board (110V plug adapter required)\n• Non-smoking in all rooms"
+    },
+    "url": "https://www.koreaferry.com/cabin/cabin_royal_suite/",
+    "url_title": "<자세히보기>"
   },
-  "url": "https://www.koreaferry.com/facilities/facilities_karaoke/",
-  "url_title": "<자세히보기>"
-},
-
-
-
-{
-  "id": "faq_discount_001",
-  "question": {
-    "ko": "할인",
-    "ja": "割引",
-    "zh_tw": "折扣",
-    "en": "Discount"
+  {
+    "id": "faq_deluxe_single_001",
+    "question": {
+      "ko": "디럭스싱글",
+      "ja": "デラックスシングル",
+      "zh_tw": "豪華單人房",
+      "en": "Deluxe Single"
+    },
+    "aliases": {
+      "ko": ["특등실", "싱글룸", "특등1인실"],
+      "ja": ["デラックスシングル", "特等シングル", "シングルルーム"],
+      "zh_tw": ["豪華單人房", "特等單人房", "單人艙房"],
+      "en": ["deluxe single", "single room", "premium single"]
+    },
+    "keywords_core": {
+      "ko": ["특등1인실", "디럭스싱글"],
+      "ja": ["デラックスシングル", "特等シングル"],
+      "zh_tw": ["豪華單人房", "特等單人房"],
+      "en": ["deluxe single", "single"]
+    },
+    "keywords_related": {
+      "ko": ["1인실", "특등실", "업그레이드", "혼자 여행", "샤워부스", "110V", "금연"],
+      "ja": ["1名利用", "特等", "アップグレード", "シャワーブース", "110V", "禁煙"],
+      "zh_tw": ["單人入住", "升等", "淋浴間", "110V", "禁菸"],
+      "en": ["solo traveler", "upgrade", "shower booth", "110V", "non-smoking"]
+    },
+    "answers": {
+      "KO": "★ 비즈니스 호텔의 편안함을 강조한 1인 전용 객실입니다.\n\n• 객실 정원: 1명 / 보유 객실: 4실\n• 주요 설비: 세면대, 샤워부스, 화장실, TV, 냉장고\n• 편의품: 가운, 세면도구 세트(샴푸·린스·치약·칫솔·수건·객실용 슬리퍼), 헤어드라이어\n• 비치품: 티포트, 다기 세트\n• 냉난방: 중앙식 시스템\n• 전압: 선내 110V (110V 변환 어댑터 필요)\n• 전 객실 금연",
+      "JA": "★ ビジネスホテル級の快適さを備えた1名様専用の客室です。\n\n• 定員：1名／保有客室：4室\n• 主な設備：洗面台、シャワーブース、トイレ、TV、冷蔵庫\n• アメニティ：ガウン、アメニティセット（シャンプー・リンス・歯磨き粉・歯ブラシ・タオル・室内スリッパ）、ヘアドライヤー\n• 備品：ティーポット、茶器セット\n• 空調：集中空調\n• 電圧：船内110V（110V変換アダプター要）\n• 全室禁煙",
+      "ZH_TW": "★ 具備商務飯店等級的舒適度，為1人專用客房。\n\n• 入住人數：1人／客房數量：4間\n• 主要設施：洗手台、淋浴間、獨立洗手間、電視、冰箱\n• 備品：浴袍、盥洗用品組（洗髮精、潤髮乳、牙膏、牙刷、毛巾、室內拖鞋）、吹風機\n• 其他：熱水壺、茶具組\n• 空調：中央空調\n• 電壓：船內110V（需自備110V轉接頭）\n• 全室禁菸",
+      "EN": "★ A single-occupancy cabin offering business-hotel comfort.\n\n• Occupancy: 1 guest / Inventory: 4 rooms\n• Key features: washbasin, shower booth, toilet, TV, refrigerator\n• Amenities: robe, toiletry set (shampoo, conditioner, toothpaste, toothbrush, towels, in-room slippers), hair dryer\n• In-room items: electric kettle, tea set\n• Climate: central HVAC\n• Power: 110V on board (110V plug adapter required)\n• Non-smoking"
+    },
+    "url": "https://www.koreaferry.com/cabin/cabin_deluxe_single/",
+    "url_title": "<자세히보기>"
   },
-  "aliases": {
-    "ko": ["할인요금", "할인혜택", "운임할인", "요금할인", "할인쿠폰", "승선권할인"],
-    "ja": ["割引料金", "運賃割引", "ディスカウント", "割引クーポン"],
-    "zh_tw": ["折扣優惠", "票價折扣", "優惠券", "船票折扣"],
-    "en": ["discount fare", "discount ticket", "fare discount", "promo code", "coupon"]
-  },
-  "keywords_core": {
-    "ko": ["할인", "요금할인"],
-    "ja": ["割引", "料金割引"],
-    "zh_tw": ["折扣", "優惠"],
-    "en": ["discount", "fare discount"]
-  },
-  "keywords_related": {
-    "ko": ["유아할인", "아동할인", "청소년할인", "소아할인", "학생할인", "장애인할인", "단체할인", "노약자할인", "조기예매", "왕복할인", "경로우대"],
-    "ja": ["幼児割引", "子供割引", "学生割引", "障害者割引", "団体割引", "高齢者優待", "早期予約", "往復割引"],
-    "zh_tw": ["幼兒折扣", "兒童折扣", "學生優惠", "身障折扣", "團體折扣", "敬老優惠", "提早預約", "來回折扣"],
-    "en": ["infant discount", "child discount", "student discount", "disabled discount", "group discount", "senior fare", "early booking", "round-trip discount"]
-  },
-  "answers": {
-    "KO": "★영아(만 2세 미만): 무임\n유아(만 2세 이상 ~ 만 6세 미만), 소아(만 6세 이상 ~ 만 12세 미만): 별도 할인 요금 적용\n학생: 중·고등학생 및 재학 중인 대학생(만 30세 미만) → 20% 할인\n※ 대학생은 유효기간이 명시된 학생증 또는 90일 이내 발급된 재학증명서 필요\n장애인: 20% 할인 (장애인 본인 및 동반 1인까지, 관련 증명서 지참 시)",
-    "JA": "★幼児（2歳未満）：無料\n2歳以上～12歳未満：割引料金が適用されます。\n学生（中高生および30歳未満の大学生）：20％割引\n※大学生は有効期限付きの学生証または90日以内発行の在学証明書をご持参ください。\n障害者：20％割引（障害者手帳または精神障害者保健福祉手帳の提示が必要。同伴者1名にも適用）",
-    "ZH_TW": "★2歲以下幼兒：免費\n2歲以上至12歲以下：適用優惠票價\n學生（國中、高中及30歲以下的大學生）：享有20%折扣\n※大學生需出示有效期限內的學生證或90天內開立的在學證明\n身心障礙者：享有20%折扣（本人與1名同行者適用，需出示相關證明文件）",
-    "EN": "★Infants (under 2 years): Free of charge\nChildren (ages 2 to under 12): Eligible for discounted fare\nStudents (middle/high school students and university students under 30): 20% discount\n※ University students must present a valid student ID or enrollment certificate issued within 90 days\nPassengers with disabilities: 20% discount for the passenger and one accompanying person (with valid disability documentation)"
-  },
-  "url": "https://www.koreaferry.com/user_guide/passenger_fare/",
-  "url_title": "<자세히보기>"
-},
-
-
-{
-  "id": "faq_unaccompanied_minors_001",
-  "question": {
-    "ko": "미성년자",
-    "ja": "未成年者",
-    "zh_tw": "未成年人",
-    "en": "Unaccompanied Minor"
-  },
-  "aliases": {
-    "ko": ["만18세", "청소년", "중학생", "고등학생", "만17세", "미성년자 승선"],
-    "ja": ["18歳未満", "未成年", "中学生", "高校生", "保護者なし"],
-    "zh_tw": ["未滿18歲", "青少年", "中學生", "高中生", "無監護人"],
-    "en": ["under 18", "minor", "teenager", "middle school student", "high school student", "without guardian"]
-  },
-  "keywords_core": {
-    "ko": ["미성년자", "청소년"],
-    "ja": ["未成年", "青少年"],
-    "zh_tw": ["未成年人", "青少年"],
-    "en": ["minor", "unaccompanied minor"]
-  },
-  "keywords_related": {
-    "ko": ["보호자 없이", "청소년 승선", "보호자 동의서", "단독 승선", "승선 동의서"],
-    "ja": ["保護者なし", "同意書", "単独乗船", "未成年の搭乗"],
-    "zh_tw": ["無監護人", "搭船同意書", "單獨搭船", "未成年搭船"],
-    "en": ["without guardian", "parental consent", "boarding alone", "minor boarding form"]
-  },
-  "answers": {
-    "KO": "★중학생 이상의 청소년이 보호자 없이 단독으로 승선하는 경우, 보호자의 동의서가 필요합니다.\n※ 초등학생 이하 어린이는 보호자의 동의서가 있어도 단독 승선이 불가능합니다.\n[안내] 미성년자 승선 동의서를 작성하여 승선 당일 제출해 주시기 바랍니다.",
-    "JA": "★中学生以上の未成年者が保護者なしで単独乗船する場合、保護者の同意書が必要です。\n※ 小学生以下のお子様は、同意書があっても単独乗船できません。\n【ご案内】未成年者乗船同意書を記入の上、当日ご提出ください。",
-    "ZH_TW": "★中學生以上的未成年人若無監護人陪同搭船，需提交監護人同意書。\n※ 小學生以下的兒童即使有同意書也無法單獨搭船。\n【提醒】請於搭船當日提交填寫完整的未成年人搭船同意書。",
-    "EN": "★Minors in middle school or older must present a parental consent form if boarding without a guardian.\n※ Children in elementary school or younger are not allowed to travel alone, even with consent.\n[Note] Please submit the completed consent form on the day of boarding."
-  },
-  "url": "https://www.koreaferry.com/user_guide/need_help/",
-  "url_title": "<자세히보기>"
-},
-
-
-{
-  "id": "faq_wheelchair_customers_001",
-  "question": {
-    "ko": "휠체어",
-    "ja": "車椅子",
-    "zh_tw": "輪椅",
-    "en": "Wheelchair"
-  },
-  "aliases": {
-    "ko": ["휠체어이용", "휠체어대여", "장애인", "보행보조기구"],
-    "ja": ["車椅子", "車いす", "障がい者サポート"],
-    "zh_tw": ["輪椅", "行動輔具", "身障者服務"],
-    "en": ["wheelchair", "mobility aid", "disabled support"]
-  },
-  "keywords_core": {
-    "ko": ["휠체어", "장애인"],
-    "ja": ["車椅子", "障がい者"],
-    "zh_tw": ["輪椅", "身障"],
-    "en": ["wheelchair", "disabled"]
-  },
-  "keywords_related": {
-    "ko": ["휠체어대여", "휠체어수송", "휠체어수속", "휠체어지원", "휠체어이용가능", "이동보조기구"],
-    "ja": ["貸出", "補助", "乗船サポート", "移動補助具"],
-    "zh_tw": ["租借", "支援", "登船協助", "行動輔助器具"],
-    "en": ["rental", "assistance", "boarding support", "mobility device"]
-  },
-  "answers": {
-    "KO": "★보행이 불편하신 고객님께는 출국 수속 시까지 무료로 휠체어를 대여해드리고 있으며, 선내에도 대여용 휠체어가 준비되어 있습니다. (단, 터미널 외부에서의 개인 용무 사용은 불가합니다)\n휠체어 수량이 한정되어 있으므로 사전 예약하신 고객님께 우선 제공됩니다.",
-    "JA": "★歩行に不安のあるお客様には、出国手続き時まで無料で車椅子を貸し出しております。船内にも貸出用車椅子をご用意しております。（※ターミナル外での私的利用はできません）\n台数に限りがあるため、事前予約のお客様を優先いたします。",
-    "ZH_TW": "★對於行動不便的旅客，我們提供在出國手續前可免費使用的輪椅，船上亦備有輪椅可供借用。（※不得在航站樓外進行私人用途）\n由於輪椅數量有限，將優先提供給事先預約的旅客。",
-    "EN": "★For passengers with mobility difficulties, complimentary wheelchair rental is available up to the departure check-in area, and additional wheelchairs are available on board. (Note: personal use outside the terminal is not permitted.)\nDue to limited availability, advance reservation is recommended."
-  },
-  "url": "https://www.koreaferry.com/user_guide/need_help/",
-  "url_title": "<자세히보기>"
-},
-
-
-
-{
-  "id": "faq_pregnant_customers_001",
-  "question": {
-    "ko": "임산부",
-    "ja": "妊婦",
-    "zh_tw": "孕婦",
-    "en": "Pregnant passengers"
-  },
-  "aliases": {
-    "ko": ["임신", "임신부", "임신중", "임산부탑승"],
-    "ja": ["妊婦", "妊娠中", "妊娠"],
-    "zh_tw": ["孕婦", "懷孕", "孕期旅客"],
-    "en": ["pregnant", "pregnancy", "pregnant woman", "expectant mother"]
-  },
-  "keywords_core": {
-    "ko": ["임산부", "임신부"],
-    "ja": ["妊婦", "妊娠"],
-    "zh_tw": ["孕婦", "懷孕"],
-    "en": ["pregnant", "pregnancy"]
-  },
-  "keywords_related": {
-    "ko": ["임신부승선", "임신몇주", "임산부승선", "임산부탑승", "임산부동의서"],
-    "ja": ["妊婦乗船", "妊娠週数", "同意書", "乗船制限"],
-    "zh_tw": ["孕婦登船", "懷孕週數", "同意書", "登船限制"],
-    "en": ["pregnant boarding", "pregnancy weeks", "consent form", "boarding restriction"]
-  },
-  "answers": {
-    "KO": "★예약 시 반드시 임신 사실을 알려주셔야 하며, 임신 주수와 관계없이 동의서 작성이 필요합니다. 또한 당사 선박에는 의료진(의사·간호사)이 승선하고 있지 않으며, 충분한 의료 설비와 의약품이 구비되어 있지 않습니다.\n\n기상에 따른 선체 동요 및 장시간 운항 중 예기치 못한 상황이 발생할 수 있으므로, 고객님의 안전을 보장할 수 없다고 판단되는 경우 승선이 제한될 수 있습니다.\n\n임신 32주 미만: 의사로부터 선박 및 해외 여행 금지를 권고받은 경우를 제외하고 일반인과 동일하게 여행이 가능합니다. 단, 의사의 소견서를 발급받아 서약서와 함께 승선 당일 카운터에 제출해 주시기 바랍니다.\n\n임신 32주 이상: 태아와 임산부 본인의 안전을 위해 당사 선박 이용은 불가하오니 양해 부탁드립니다.",
-    "JA": "★ご予約の際、必ず妊娠中であることをお知らせください。妊娠週数に関わらず同意書のご提出が必要です。また、当社の船舶には医師や看護師は乗船しておらず、十分な医療設備や医薬品も備えておりません。\n\n天候による揺れや長時間航行中に予期せぬ事態が発生する可能性があるため、安全を確保できないと判断された場合はご乗船をお断りする場合があります。\n\n妊娠32週未満：医師から乗船や海外旅行の制限を受けていない限り、一般のお客様と同様にご利用いただけます。医師の診断書を取得し、誓約書とともに当日カウンターへご提出ください。\n\n妊娠32週以上：お客様と胎児の安全のため、ご乗船いただけませんのでご了承ください。",
-    "ZH_TW": "★預訂時請務必告知懷孕狀況，無論孕期週數皆需填寫同意書。此外，本公司船舶上無醫療人員（醫師、護理師），亦無完善醫療設備及藥品。\n\n由於天候造成的船體搖晃與長時間航行可能引發突發狀況，若判斷無法確保安全，可能會限制登船。\n\n懷孕未滿32週：除非醫師建議不得搭船或出國，否則可與一般旅客相同登船。請攜帶醫師診斷證明，並於登船當日與切結書一併提交至櫃檯。\n\n懷孕32週以上：為了孕婦與胎兒的安全，恕無法提供搭乘服務，敬請見諒。",
-    "EN": "★Please make sure to inform us of your pregnancy when making a reservation. A consent form is required regardless of the number of weeks of pregnancy. Please note that there are no medical staff (doctors or nurses) on board, and medical equipment and supplies are limited.\n\nDue to possible ship movement caused by weather and the risk of unexpected incidents during long voyages, boarding may be restricted if your safety cannot be assured.\n\nPregnancy under 32 weeks: Unless your doctor advises against sea or overseas travel, you may board like regular passengers. Please bring a medical certificate and submit it together with the consent form at check-in on the day of departure.\n\nPregnancy 32 weeks or more: For the safety of both the expectant mother and the baby, boarding is not permitted."
-  },
-  "url": "https://www.koreaferry.com/user_guide/need_help/",
-  "url_title": "<자세히보기>"
-}
-
-
-
-
-
-  
-  
+  {
+    "id": "faq_deluxe_twin_001",
+    "question": {
+      "ko": "디럭스트윈",
+      "ja": "デラックスツイン",
+      "zh_tw": "豪華雙床房",
+      "en": "Deluxe Twin"
+    },
+    "aliases": {
+      "ko": ["특등실", "트윈룸", "특등2인실"],
+      "ja": ["デラックスツイン", "特等ツイン", "ツインルーム"],
+      "zh_tw": ["豪華雙床房", "特等雙床房", "雙人艙房"],
+      "en": ["deluxe twin", "twin room", "premium twin"]
+    },
+    "keywords_core": {
+      "ko": ["특등2인실", "디럭스트윈"],
+      "ja": ["デラックスツイン", "特等ツイン"],
+      "zh_tw": ["豪華雙床房", "特等雙床房"],
+      "en": ["deluxe twin", "twin"]
+    },
+    "keywords_related": {
+      "ko": ["2인실", "특등실", "업그레이드", "커플", "가족", "샤워부스", "110V", "금연"],
+      "ja": ["2名利用", "特等", "カップル", "ファミリー", "シャワーブース", "110V", "禁煙"],
+      "zh_tw": ["雙人入住", "升等", "情侶", "家庭", "淋浴間", "110V", "禁菸"],
+      "en": ["two guests", "upgrade", "couple", "family", "shower booth", "110V", "non-smoking"]
+    },
+    "answers": {
+      "KO": "★ 비즈니스 호텔의 편안함을 강조한 2인 전용 객실입니다。\n\n• 객실 정원: 2명 / 보유 객실: 4실\n• 주요 설비: 세면대, 샤워부스, 화장실, TV, 냉장고\n• 편의품: 가운, 세면도구 세트(샴푸·린스·치약·칫솔·수건·객실용 슬리퍼), 헤어드라이어\n• 비치품: 티포트, 다기 세트\n• 냉난방: 중앙식 시스템\n• 전압: 선내 110V (110V 변환 어댑터 필요)\n• 전 객실 금연",
+      "JA": "★ ビジネスホテル級の快適さを備えた2名様用の客室です。\n\n• 定員：2名／保有客室：4室\n• 主な設備：洗面台、シャワーブース、トイレ、TV、冷蔵庫\n• アメニティ：ガウン、アメニティセット（シャンプー・リンス・歯磨き粉・歯ブラシ・タオル・室内スリッパ）、ヘアドライヤー\n• 備品：ティーポット、茶器セット\n• 空調：集中空調\n• 電圧：船内110V（110V変換アダプター要）\n• 全室禁煙",
+      "ZH_TW": "★ 具備商務飯店等級的舒適度，適合2人入住。\n\n• 入住人數：2人／客房數量：4間\n• 主要設施：洗手台、淋浴間、獨立洗手間、電視、冰箱\n• 備品：浴袍、盥洗用品組（洗髮精、潤髮乳、牙膏、牙刷、毛巾、室內拖鞋）、吹風機\n• 其他：熱水壺、茶具組\n• 空調：中央空調\n• 電壓：船內110V（需自備110V轉接頭）\n• 全室禁菸",
+      "EN": "★ A twin cabin offering business-hotel comfort for two guests.\n\n• Occupancy: 2 guests / Inventory: 4 rooms\n• Key features: washbasin, shower booth, toilet, TV, refrigerator\n• Amenities: robes, toiletry set (shampoo, conditioner, toothpaste, toothbrush, towels, in-room slippers), hair dryer\n• In-room items: electric kettle, tea set\n• Climate: central HVAC\n• Power: 110V on board (110V plug adapter required)\n• Non-smoking"
+    },
+    "url": "https://www.koreaferry.com/cabin/cabin_deluxe_twin/",
+    "url_title": "<자세히보기>"
+  }
 ]
