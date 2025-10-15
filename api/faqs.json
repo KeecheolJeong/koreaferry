@@ -698,5 +698,245 @@
     },
     "url": "https://www.koreaferry.com/cabin/cabin_deluxe_twin/",
     "url_title": "<자세히보기>"
-  }
+  },
+  
+  
+  {
+  "id": "faq_deluxe_triple_001",
+  "question": {
+    "ko": "디럭스트리플",
+    "ja": "デラックストリプル",
+    "zh_tw": "豪華三人房",
+    "en": "Deluxe Triple"
+  },
+  "aliases": {
+    "ko": ["특등실", "트리플", "특등3인실", "트리플룸"],
+    "ja": ["トリプル", "特等3名室", "トリプルルーム"],
+    "zh_tw": ["三人房", "特等三人艙", "三人艙房"],
+    "en": ["triple room", "premium triple", "three-bed cabin"]
+  },
+  "keywords_core": {
+    "ko": ["특등3인실", "디럭스트리플"],
+    "ja": ["デラックストリプル", "特等3名室"],
+    "zh_tw": ["豪華三人房", "特等三人房"],
+    "en": ["deluxe triple", "triple"]
+  },
+  "keywords_related": {
+    "ko": ["3인실", "특등실", "3인용특등실", "3인실업그레이드", "3인선실"],
+    "ja": ["3名用", "特等", "アップグレード", "家族向け"],
+    "zh_tw": ["三人入住", "特等", "升等", "家庭旅遊"],
+    "en": ["3 guests", "upgrade", "family", "premium cabin"]
+  },
+  "answers": {
+    "KO": "★3인 가족을 위한 고품격 공간으로 ‘편안한 크루즈 여행’을 경험하실 수 있습니다.\n★객실정원 3명 / 보유객실 2실\n★세면대, 샤워부스, 화장실, TV, 냉장고\n★냉난방시스템(중앙식)\n★가운, 세면도구 세트 제공(샴푸, 린스, 치약, 칫솔, 수건, 객실용 슬리퍼), 헤어드라이어\n★티포트, 다기 세트\n★선내 전압 110V(110V 변환 어댑터 필요)\n★전 객실 금연",
+    "JA": "★3名様のご家族に最適な上質な空間で、快適なクルーズ旅をご体験いただけます。\n★定員：3名／客室数：2室\n★設備：洗面台、シャワーブース、トイレ、TV、冷蔵庫\n★空調：集中空調\n★アメニティ：ガウン、アメニティセット（シャンプー・リンス・歯磨き粉・歯ブラシ・タオル・室内スリッパ）、ヘアドライヤー\n★備品：ティーポット、茶器セット\n★電圧：船内110V（110V変換アダプター要）\n★全室禁煙",
+    "ZH_TW": "★為3人家庭設計的高質感空間，帶來舒適的郵輪旅程。\n★入住人數：3人／客房數量：2間\n★設施：洗手台、淋浴間、獨立洗手間、電視、冰箱\n★空調：中央空調\n★備品：浴袍、盥洗用品組（洗髮精、潤髮乳、牙膏、牙刷、毛巾、室內拖鞋）、吹風機\n★其他：熱水壺、茶具組\n★電壓：船內110V（需自備110V轉接頭）\n★全室禁菸",
+    "EN": "★A premium space ideal for families of three, offering a comfortable cruise experience.\n★Occupancy: 3 guests / Inventory: 2 rooms\n★Features: washbasin, shower booth, toilet, TV, refrigerator\n★Climate: central HVAC\n★Amenities: robes, toiletry set (shampoo, conditioner, toothpaste, toothbrush, towels, in-room slippers), hair dryer\n★In-room items: electric kettle, tea set\n★Power: 110V on board (110V plug adapter required)\n★Non-smoking in all rooms"
+  },
+  "url": "https://www.koreaferry.com/cabin/cabin_deluxe_triple/",
+  "url_title": "<자세히보기>"
+},
+
+
+{
+  "id": "faq_firstclass_western_2bed_001",
+  "question": {
+    "ko": "1등2인양실",
+    "ja": "一等2人洋室",
+    "zh_tw": "一等雙人洋式房",
+    "en": "First-Class Western Twin (2-berth)"
+  },
+  "aliases": {
+    "ko": ["1등실2인", "2인실", "일등이인실", "일등실"],
+    "ja": ["一等2人室", "洋室ツイン", "一等洋室"],
+    "zh_tw": ["一等雙人房", "洋式雙人房", "一等艙雙人"],
+    "en": ["first class twin", "western twin", "2-berth cabin"]
+  },
+  "keywords_core": {
+    "ko": ["1등2인실", "1등2인양실"],
+    "ja": ["一等2人室", "一等洋室"],
+    "zh_tw": ["一等雙人房", "洋式房"],
+    "en": ["first-class twin", "western twin"]
+  },
+  "keywords_related": {
+    "ko": ["2인실", "1등실", "2층침대", "업그레이드", "이인실"],
+    "ja": ["2名利用", "二段ベッド", "アップグレード"],
+    "zh_tw": ["雙人入住", "上下舖", "升等"],
+    "en": ["two guests", "bunk beds", "upgrade"]
+  },
+  "answers": {
+    "KO": "★가족, 친구와 여행하기 알맞은 독립적인 공간으로, 편안한 시간을 보내실 수 있습니다.\n★객실정원 2명 / 보유객실 20실\n★세면대, TV\n★냉난방시스템(중앙식)\n★세면도구 세트 제공(치약, 칫솔, 수건)\n★선내 전압 110V(110V 변환 어댑터 필요)\n★전 객실 금연",
+    "JA": "★ご家族・ご友人とのご旅行に最適な独立空間で、快適にお過ごしいただけます。\n★定員：2名／客室数：20室\n★設備：洗面台、TV\n★空調：集中空調\n★アメニティ：歯磨き粉・歯ブラシ・タオル\n★電圧：船内110V（110V変換アダプター要）\n★全室禁煙",
+    "ZH_TW": "★適合家人或朋友同行的獨立空間，享受舒適時光。\n★入住人數：2人／客房數量：20間\n★設施：洗手台、電視\n★空調：中央空調\n★備品：牙膏、牙刷、毛巾\n★電壓：船內110V（需自備110V轉接頭）\n★全室禁菸",
+    "EN": "★A private, comfortable space ideal for traveling with family or friends.\n★Occupancy: 2 guests / Inventory: 20 rooms\n★Features: washbasin, TV\n★Climate: central HVAC\n★Amenities: toothpaste, toothbrush, towels\n★Power: 110V on board (110V plug adapter required)\n★Non-smoking in all rooms"
+  },
+  "url": "https://www.koreaferry.com/cabin/western_2bed/",
+  "url_title": "<자세히보기>"
+},
+
+
+{
+  "id": "faq_firstclass_western_4bed_001",
+  "question": {
+    "ko": "1등4인양실",
+    "ja": "一等4人洋室",
+    "zh_tw": "一等四人洋式房",
+    "en": "First-Class Western Quad (4-berth)"
+  },
+  "aliases": {
+    "ko": ["1등실4인", "4인실", "일등사인실", "일등실"],
+    "ja": ["一等4人室", "洋室クアッド", "一等洋室"],
+    "zh_tw": ["一等四人房", "洋式四人房", "一等艙四人"],
+    "en": ["first class quad", "western quad", "4-berth cabin"]
+  },
+  "keywords_core": {
+    "ko": ["1등4인실", "1등4인양실"],
+    "ja": ["一等4人室", "一等洋室"],
+    "zh_tw": ["一等四人房", "洋式房"],
+    "en": ["first-class quad", "western quad"]
+  },
+  "keywords_related": {
+    "ko": ["4인실", "1등실", "2층침대", "업그레이드", "사인실"],
+    "ja": ["4名利用", "二段ベッド", "アップグレード"],
+    "zh_tw": ["四人入住", "上下舖", "升等"],
+    "en": ["four guests", "bunk beds", "upgrade"]
+  },
+  "answers": {
+    "KO": "★가족, 친구들과 여행하기 알맞은 독립적인 공간으로, 편안한 시간을 보내실 수 있습니다.\n★객실정원 4명 / 보유객실 12실\n★세면대, TV\n★냉난방시스템(중앙식)\n★가운, 세면도구 세트 제공(치약, 칫솔, 수건)\n★선내 전압 110V(110V 변환 어댑터 필요)\n★전 객실 금연",
+    "JA": "★ご家族・ご友人とのご旅行に最適な独立空間で、快適にお過ごしいただけます。\n★定員：4名／客室数：12室\n★設備：洗面台、TV\n★空調：集中空調\n★アメニティ：ガウン、歯磨き粉・歯ブラシ・タオル\n★電圧：船内110V（110V変換アダプター要）\n★全室禁煙",
+    "ZH_TW": "★適合家人或朋友同行的獨立空間，享受舒適時光。\n★入住人數：4人／客房數量：12間\n★設施：洗手台、電視\n★空調：中央空調\n★備品：浴袍、牙膏、牙刷、毛巾\n★電壓：船內110V（需自備110V轉接頭）\n★全室禁菸",
+    "EN": "★A private, comfortable space ideal for families and friends traveling together.\n★Occupancy: 4 guests / Inventory: 12 rooms\n★Features: washbasin, TV\n★Climate: central HVAC\n★Amenities: robes, toothpaste, toothbrush, towels\n★Power: 110V on board (110V plug adapter required)\n★Non-smoking in all rooms"
+  },
+  "url": "https://www.koreaferry.com/cabin/western_4bed/",
+  "url_title": "<자세히보기>"
+},
+
+
+
+{
+  "id": "faq_firstclass_japanese_5pax_001",
+  "question": {
+    "ko": "1등5인화실",
+    "ja": "一等5人和室",
+    "zh_tw": "一等五人和式房",
+    "en": "First-Class Japanese Room (5 persons)"
+  },
+  "aliases": {
+    "ko": ["1등실5인", "1등화실", "5인화실", "일등실"],
+    "ja": ["一等和室", "5人和室", "一等5名室"],
+    "zh_tw": ["一等和室", "五人和室", "一等艙五人"],
+    "en": ["first class Japanese room", "tatami room", "5-person cabin"]
+  },
+  "keywords_core": {
+    "ko": ["1등5인실", "1등5인화실"],
+    "ja": ["一等和室", "5人和室"],
+    "zh_tw": ["一等五人和室", "和式房"],
+    "en": ["first-class Japanese room", "tatami"]
+  },
+  "keywords_related": {
+    "ko": ["5인실", "1등실", "다다미룸", "업그레이드", "아이동반", "바닥선실"],
+    "ja": ["5名利用", "畳", "ファミリー", "お子様連れ"],
+    "zh_tw": ["五人入住", "榻榻米", "家庭旅遊", "親子"],
+    "en": ["five guests", "tatami", "family", "with children"]
+  },
+  "answers": {
+    "KO": "★일본 전통 다다미 스타일의 공간으로, 편안함과 아늑함을 느끼실 수 있으며 ‘아이들을 동반한 가족 여행’에 최적입니다.\n★객실정원 5명 / 보유객실 21실\n★세면대, TV\n★냉난방시스템(중앙식)\n★세면도구 세트 제공(치약, 칫솔, 수건)\n★티포트, 다기 세트\n★선내 전압 110V(110V 변환 어댑터 필요)\n★전 객실 금연",
+    "JA": "★日本の伝統的な畳スタイルの空間で、快適かつ温かみのある雰囲気。小さなお子様連れのご家族旅行に最適です。\n★定員：5名／客室数：21室\n★設備：洗面台、TV\n★空調：集中空調\n★アメニティ：歯磨き粉・歯ブラシ・タオル\n★備品：ティーポット、茶器セット\n★電圧：船内110V（110V変換アダプター要）\n★全室禁煙",
+    "ZH_TW": "★採日本傳統榻榻米設計，溫馨舒適，特別適合親子家庭旅遊。\n★入住人數：5人／客房數量：21間\n★設施：洗手台、電視\n★空調：中央空調\n★備品：牙膏、牙刷、毛巾\n★其他：熱水壺、茶具組\n★電壓：船內110V（需自備110V轉接頭）\n★全室禁菸",
+    "EN": "★A traditional Japanese tatami-style space offering warmth and comfort—ideal for families with children.\n★Occupancy: 5 guests / Inventory: 21 rooms\n★Features: washbasin, TV\n★Climate: central HVAC\n★Amenities: toothpaste, toothbrush, towels\n★In-room items: electric kettle, tea set\n★Power: 110V on board (110V plug adapter required)\n★Non-smoking in all rooms"
+  },
+  "url": "https://www.koreaferry.com/cabin/japanese_cabin/",
+  "url_title": "<자세히보기>"
+},
+
+
+
+
+{
+  "id": "faq_economy_class_001",
+  "question": {
+    "ko": "2등실",
+    "ja": "2等室",
+    "zh_tw": "二等艙（多人房）",
+    "en": "Economy Class (Second-Class Shared Room)"
+  },
+  "aliases": {
+    "ko": ["기본다인실", "기본실", "이등실", "다인실"],
+    "ja": ["基本大部屋", "2等", "多人数室", "団体室"],
+    "zh_tw": ["基本艙房", "二等艙", "多人房", "團體艙"],
+    "en": ["economy class", "second-class", "shared room", "dormitory", "group cabin"]
+  },
+  "keywords_core": {
+    "ko": ["2등실", "기본다인실"],
+    "ja": ["2等室", "大部屋"],
+    "zh_tw": ["二等艙", "多人房"],
+    "en": ["second-class", "shared room"]
+  },
+  "keywords_related": {
+    "ko": ["다인실", "2등실", "기본실", "단체선실", "단체실", "이등실"],
+    "ja": ["多人数室", "2等", "基本室", "団体", "グループ"],
+    "zh_tw": ["多人房", "二等艙", "基本艙房", "團體", "團體艙"],
+    "en": ["shared cabin", "second class", "basic room", "group", "dorm"]
+  },
+  "answers": {
+    "KO": "★ 대가족, 동호회, 학교 등 단체 승객을 위한 객실입니다.\n★ 귀중품은 3층에 위치한 귀중품 보관함을 이용해 주시기 바랍니다. (선내 안내데스크 문의)\n★ 객실정원 11~24명 / 보유객실 24실\n★ 탈의실, TV\n★ 냉난방시스템(중앙식)\n★ 선내 전압 110V(110V 변환 어댑터 필요)\n★ 전 객실 금연\n★ 소등시간 23:00",
+    "JA": "★ 大家族・サークル・学校など団体のお客様向けの客室です。\n★ 貴重品は3階の貴重品ロッカーをご利用ください。（船内案内デスクまで）\n★ 定員：11～24名／客室数：24室\n★ 脱衣室、TV\n★ 空調：集中空調\n★ 電圧：船内110V（110V変換アダプター要）\n★ 全室禁煙\n★ 消灯時間：23:00",
+    "ZH_TW": "★ 適合大家庭、社團、學校等團體旅客使用的艙房。\n★ 貴重物品請使用3樓的貴重物品置物櫃。（可向船內服務台洽詢）\n★ 容納人數：11～24人／艙房數量：24間\n★ 設施：更衣室、電視\n★ 空調：中央空調\n★ 電壓：船內110V（需自備110V轉接頭）\n★ 全室禁菸\n★ 熄燈時間：23:00",
+    "EN": "★ A shared cabin designed for groups such as large families, clubs, and school parties.\n★ Please store valuables in the valuables lockers on Deck 3 (ask at the onboard information desk).\n★ Occupancy: 11–24 guests / Inventory: 24 rooms\n★ Facilities: changing room, TV\n★ Climate: central HVAC\n★ Power: 110V on board (110V plug adapter required)\n★ Non-smoking throughout\n★ Lights out at 23:00"
+  },
+  "url": "https://www.koreaferry.com/cabin/economy_class/",
+  "url_title": "<자세히보기>"
+},
+
+
+
+
+
+
+{
+  "id": "faq_economy_bed_001",
+  "question": {
+    "ko": "2등침대실",
+    "ja": "2等ベッド室",
+    "zh_tw": "二等床鋪房",
+    "en": "Economy Bed (Second-Class Dormitory)"
+  },
+  "aliases": {
+    "ko": ["2등침대실", "침대실", "이등침대실", "다인침대실"],
+    "ja": ["2等寝台室", "2等ベッド", "ドミトリー"],
+    "zh_tw": ["二等艙床位", "二等床位房", "多人床鋪房"],
+    "en": ["second-class bed", "economy bed", "shared dorm"]
+  },
+  "keywords_core": {
+    "ko": ["2등침대실", "이등침대실"],
+    "ja": ["2等寝台室", "2等ベッド"],
+    "zh_tw": ["二等床鋪房", "二等艙床位"],
+    "en": ["economy bed", "second-class dorm"]
+  },
+  "keywords_related": {
+    "ko": ["다인실", "2등실", "개별침대", "혼자여행", "침대선실"],
+    "ja": ["多人数室", "2等", "個別ベッド", "一人旅"],
+    "zh_tw": ["多人房", "二等艙", "單人床位", "獨自旅行"],
+    "en": ["shared room", "second class", "individual bunk", "solo traveler"]
+  },
+  "answers": {
+    "KO": "★ 2등실이지만 나만의 침대 공간을 이용할 수 있는 객실로, 선박여행의 묘미를 느끼실 수 있습니다.\n★ 객실정원 12명, 25명 / 보유객실 각 1실\n★ 개인 침대 구비\n★ 냉난방시스템(중앙식)\n★ 선내 전압 110V(110V 변환 어댑터 필요)\n★ 전 객실 금연\n★ 소등시간 23:00",
+    "JA": "★ 2等でありながら自分専用のベッドが確保された客室で、船旅ならではの魅力をお楽しみいただけます。\n★ 定員：12名・25名／各1室\n★ 個別ベッド完備\n★ 空調：集中空調\n★ 電圧：船内110V（110V変換アダプター要）\n★ 全室禁煙\n★ 消灯時間：23:00",
+    "ZH_TW": "★ 雖為二等艙，仍提供個人專屬床位，體驗獨特的海上旅程。\n★ 容納人數：12人、25人／各1間\n★ 配備個人床位\n★ 空調：中央空調\n★ 電壓：船內110V（需自備110V轉接頭）\n★ 全室禁菸\n★ 熄燈時間：23:00",
+    "EN": "★ A second-class shared cabin with your own dedicated bed—enjoy the charm of sea travel.\n★ Occupancy: 12-person and 25-person rooms (one of each)\n★ Individual beds provided\n★ Climate: central HVAC\n★ Power: 110V on board (110V plug adapter required)\n★ Non-smoking throughout\n★ Lights out at 23:00"
+  },
+  "url": "https://www.koreaferry.com/cabin/economy_bed/",
+  "url_title": "<자세히보기>"
+}
+
+
+
+
+
+
+
+  
+  
+  
+  
 ]
