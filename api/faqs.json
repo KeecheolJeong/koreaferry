@@ -104,6 +104,48 @@
     "url": "https://www.koreaferry.com/facilities/facilities_bath/",
     "url_title": "<자세히보기>"
   },
+  
+  
+  {
+  "id": "faq_vehicle_001",
+  "question": {
+    "ko": "승용차·오토바이",
+    "ja": "自動車・オートバイ",
+    "zh_tw": "汽車與機車",
+    "en": "Passenger Car & Motorcycle"
+  },
+  "aliases": {
+    "ko": ["자동차", "차량", "오토바이", "이륜차", "자전거오토바이"],
+    "ja": ["車両", "自動車", "バイク", "オートバイ"],
+    "zh_tw": ["汽車", "車輛", "摩托車", "機車"],
+    "en": ["car", "vehicle", "automobile", "motorcycle", "bike"]
+  },
+  "keywords_core": {
+    "ko": ["승용차", "오토바이"],
+    "ja": ["自動車", "オートバイ"],
+    "zh_tw": ["汽車", "機車"],
+    "en": ["car", "motorcycle"]
+  },
+  "keywords_related": {
+    "ko": ["선적", "요금", "예약", "탑승절차", "차량등록증"],
+    "ja": ["積載", "積み込み", "料金", "予約", "乗船手続き", "車検証"],
+    "zh_tw": ["裝載", "上船", "費用", "預約", "登船手續", "車輛登記證"],
+    "en": ["loading", "fare", "reservation", "boarding process", "vehicle registration"]
+  },
+  "answers": {
+    "KO": "★ 승용차 및 오토바이는 선박에 선적 가능합니다. 차량 크기와 중량에 따라 요금이 다르며, 사전 예약이 필요합니다.\n[추가안내] 차량 선적 시 차량등록증 확인이 필요하며, 안전을 위해 연료는 반드시 최소 수준으로 유지해 주세요.",
+    "JA": "★ 自動車およびオートバイは船舶に積載可能です。料金は車両のサイズ・重量により異なるため、事前予約をお願いします。\n【補足】積載時には車検証の確認が必要です。安全のため、燃料は必ず最小限の状態でご乗船ください。",
+    "ZH_TW": "★ 汽車與機車皆可裝載上船。費用將依車輛大小與重量而定，需事先預約。\n【補充】裝載時需出示車輛登記證，為了安全請將油量維持在最低水平。",
+    "EN": "★ Passenger cars and motorcycles can be loaded onto the ferry. Fares vary by vehicle size and weight, and advance reservation is required.\n[Note] Vehicle registration must be presented at loading, and for safety the fuel level should be kept to a minimum."
+  },
+  "url": "https://www.koreaferry.com/user_guide/car/",
+  "url_title": "<자세히보기>"
+},
+
+
+
+
+
   {
     "id": "faq_dutyfree_001",
     "question": {
