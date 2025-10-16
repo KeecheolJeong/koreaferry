@@ -391,6 +391,7 @@
     "url": "https://www.koreaferry.com/user_guide/need_help/",
     "url_title": "<자세히보기>"
   },
+  
   {
     "id": "faq_information_desk_001",
     "question": {
@@ -426,6 +427,46 @@
     "url": "https://www.koreaferry.com/facilities/facilities_etc/",
     "url_title": "<자세히보기>"
   },
+  
+{
+  "id": "faq_check in_001",
+  "question": {
+    "ko": "수속",
+    "ja": "手続き（チェックイン）",
+    "zh_tw": "手續（報到）",
+    "en": "Check-in & Boarding"
+  },
+  "aliases": {
+    "ko": ["수속", "발권", "보딩", "티켓팅", "승선", "하선"],
+    "ja": ["手続き", "チェックイン", "搭乗手続き", "発券", "乗船", "下船"],
+    "zh_tw": ["手續", "報到", "辦理登船", "取票", "登船", "下船"],
+    "en": ["check-in", "boarding", "ticketing", "issuance", "embarkation", "disembarkation"]
+  },
+  "keywords_core": {
+    "ko": ["출국", "입국", "체크인"],
+    "ja": ["出国手続き", "入国手続き", "チェックイン"],
+    "zh_tw": ["出境手續", "入境手續", "報到"],
+    "en": ["check-in", "departure immigration", "arrival immigration"]
+  },
+  "keywords_related": {
+    "ko": ["승선권", "티켓", "입국수속", "수하물검사", "짐검사", "보안검사", "휴대품검사"],
+    "ja": ["乗船券", "チケット", "入国手続き", "手荷物検査", "保安検査", "携行品検査"],
+    "zh_tw": ["登船證", "船票", "入境手續", "行李檢查", "安檢", "隨身物品檢查"],
+    "en": ["boarding pass", "ticket", "immigration", "baggage inspection", "security screening", "carry-on inspection"]
+  },
+  "answers": {
+    "KO": "★ 승선 수속 및 승선 시간은 부산항 출발편과 하카타항 출발편이 서로 다릅니다. 자세한 일정과 절차는 홈페이지 안내를 참고하세요.",
+    "JA": "★ 乗船手続きおよび乗船時間は、釜山発と博多発で異なります。詳細な時刻・手順は当社ホームページをご確認ください。",
+    "ZH_TW": "★ 登船手續與登船時間在釜山出發與博多出發之間有所不同。詳細時刻與流程請參考官網說明。",
+    "EN": "★ Check-in and boarding times differ between departures from Busan and Hakata. Please refer to our website for detailed schedules and procedures."
+  },
+  "url": "https://www.koreaferry.com/user_guide/check_in/",
+  "url_title": "<자세히보기>"
+},
+  
+  
+  
+  
   {
     "id": "faq_vending_machine_001",
     "question": {
